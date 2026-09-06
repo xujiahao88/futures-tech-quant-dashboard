@@ -1,0 +1,103 @@
+{
+  "trade_date": "20260904",
+  "capabilities": {
+    "DCE": [
+      {
+        "tier": 1,
+        "source": "CTP",
+        "configured": false
+      },
+      {
+        "tier": 2,
+        "source": "REALTIME_WS",
+        "configured": false
+      },
+      {
+        "tier": 3,
+        "source": "DCE_OFFICIAL_EOD",
+        "configured": true,
+        "adapter": "ExchangeDailyCollector"
+      },
+      {
+        "tier": 4,
+        "source": "SINA_PUBLIC_API",
+        "configured": true
+      },
+      {
+        "tier": 5,
+        "source": "WEB_FALLBACK",
+        "configured": false
+      }
+    ],
+    "SHFE": [
+      {
+        "tier": 1,
+        "source": "CTP",
+        "configured": false
+      },
+      {
+        "tier": 2,
+        "source": "REALTIME_WS",
+        "configured": false
+      },
+      {
+        "tier": 3,
+        "source": "SHFE_OFFICIAL_EOD",
+        "configured": true,
+        "adapter": "ExchangeDailyCollector"
+      },
+      {
+        "tier": 4,
+        "source": "SINA_PUBLIC_API",
+        "configured": true
+      },
+      {
+        "tier": 5,
+        "source": "WEB_FALLBACK",
+        "configured": false
+      }
+    ],
+    "GFEX": [
+      {
+        "tier": 1,
+        "source": "CTP",
+        "configured": false
+      },
+      {
+        "tier": 2,
+        "source": "REALTIME_WS",
+        "configured": false
+      },
+      {
+        "tier": 3,
+        "source": "GFEX_OFFICIAL_EOD",
+        "configured": true,
+        "adapter": "ExchangeDailyCollector"
+      },
+      {
+        "tier": 4,
+        "source": "SINA_PUBLIC_API",
+        "configured": true
+      },
+      {
+        "tier": 5,
+        "source": "WEB_FALLBACK",
+        "configured": false
+      }
+    ]
+  },
+  "official_probes": {
+    "DCE": {
+      "status": "error",
+      "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+    },
+    "SHFE": {
+      "status": "ok",
+      "rows": 305
+    },
+    "GFEX": {
+      "status": "ok",
+      "rows": 48
+    }
+  }
+}

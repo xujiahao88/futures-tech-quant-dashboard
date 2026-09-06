@@ -1,0 +1,7 @@
+﻿cohort,event_count,threshold
+TOP10,260,0.1
+TOP15,134,0.15
+TOP20,57,0.2
+BOTTOM10,283,0.1
+BOTTOM15,114,0.15
+BOTTOM20,59,0.2
