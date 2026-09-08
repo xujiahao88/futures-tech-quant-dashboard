@@ -3,7 +3,9 @@ from __future__ import annotations
 import hmac
 import os
 import sys
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import numpy as np
 import pandas as pd
@@ -18,13 +20,18 @@ if str(ROOT) not in sys.path:
 from backtest.analog_search import find_analogs
 from config import DATA, REPORTS, SYMBOLS
 
-st.set_page_config(page_title="Commodity Quant Lab", page_icon="◈", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Commodity Quant Lab", page_icon="◈", layout="wide", initial_sidebar_state="auto")
 
 COLORS = {"ink": "#0B1739", "blue": "#2864DC", "cyan": "#00A7B5", "green": "#12A36D", "red": "#E45757", "amber": "#E99A2B"}
 STATE_COLORS = {
     "HEALTHY_TREND": "#12A36D", "HIGH_FRAGILITY": "#E45757", "SHORT_SQUEEZE": "#8B5CF6",
     "LONG_LIQUIDATION": "#D92D20", "NEW_SHORT_TREND": "#F79009", "POTENTIAL_BOTTOM": "#00A7B5",
     "HIGH_NOISE": "#667085", "TRANSITION": "#2864DC", "DATA_LIMITED": "#98A2B3",
+}
+STATE_LABELS = {
+    "HEALTHY_TREND": "健康趋势", "HIGH_FRAGILITY": "高位脆弱", "SHORT_SQUEEZE": "空头挤压",
+    "LONG_LIQUIDATION": "多头踩踏", "NEW_SHORT_TREND": "新空趋势", "POTENTIAL_BOTTOM": "潜在底部",
+    "HIGH_NOISE": "高噪声", "TRANSITION": "状态过渡", "DATA_LIMITED": "数据受限", "UNCHANGED": "未变化",
 }
 PAGES = ["市场总览", "生存风险", "持仓结构", "择时状态", "历史相似", "横截面雷达", "数据质量"]
 
@@ -63,6 +70,17 @@ html, body, [class*="css"] { font-family:Inter,"Noto Sans SC","Microsoft YaHei",
 .footer { color:#98A2B3; font-size:.72rem; text-align:center; margin-top:2.5rem; padding-top:1rem; border-top:1px solid #EEF1F6; }
 [data-testid="stDataFrame"] { border:1px solid #E7EBF2; border-radius:14px; overflow:hidden; }
 [data-testid="stPlotlyChart"] { background:white; border:1px solid #E7EBF2; border-radius:16px; padding:7px; box-shadow:0 6px 18px rgba(17,38,82,.04); }
+.hero-badge.stale { background:rgba(228,87,87,.24); border-color:rgba(255,210,210,.52); color:#FFF1F1; }
+@media (max-width: 768px) {
+  .block-container { padding:1rem .75rem 2rem; }
+  .hero { border-radius:16px; padding:31px 19px 22px; }
+  .hero .eyebrow { display:none; }
+  .hero h1 { font-size:1.62rem; }
+  .hero p { font-size:.84rem; line-height:1.65; }
+  .metric-card { min-height:96px; padding:13px 14px; }
+  .metric-value { font-size:1.3rem; }
+  [data-testid="stDataFrame"] { font-size:.78rem; }
+}
 </style>
 """, unsafe_allow_html=True,
 )
@@ -118,7 +136,24 @@ def section(title, note=""):
 
 def state_pill(state):
     color = STATE_COLORS.get(state, STATE_COLORS["DATA_LIMITED"])
-    return f'<span class="state-pill" style="background:{color}">{state}</span>'
+    return f'<span class="state-pill" style="background:{color}">{STATE_LABELS.get(state, state)} · {state}</span>'
+
+
+def state_display(state):
+    state = "DATA_LIMITED" if state is None or pd.isna(state) else str(state)
+    return f"{STATE_LABELS.get(state, state)} · {state}"
+
+
+def state_change_display(change):
+    if change is None or pd.isna(change):
+        return "—"
+    change = str(change)
+    if change == "UNCHANGED":
+        return "未变化 · UNCHANGED"
+    if " -> " in change:
+        before, after = change.split(" -> ", 1)
+        return f"{STATE_LABELS.get(before, before)} → {STATE_LABELS.get(after, after)} · {change}"
+    return change
 
 
 def style_figure(fig, height=390):
@@ -139,6 +174,12 @@ except FileNotFoundError:
     st.stop()
 
 latest_date = bars["trade_date"].max()
+shanghai_today = pd.Timestamp(datetime.now(ZoneInfo("Asia/Shanghai")).date())
+business_lag = int(np.busday_count(
+    (latest_date.normalize() + pd.Timedelta(days=1)).date(),
+    (shanghai_today + pd.Timedelta(days=1)).date(),
+)) if latest_date.normalize() < shanghai_today else 0
+is_stale = business_lag > 1
 latest_bars = bars.sort_values("trade_date").groupby("symbol").tail(1)
 latest_features = features.sort_values("trade_date").groupby("symbol").tail(1)
 research_symbols = sorted(latest_features["symbol"].unique().tolist())
@@ -154,9 +195,11 @@ with st.sidebar:
     st.markdown("---")
     st.caption("状态是研究分类，不是交易指令。")
 
+freshness_text = f"滞后 {business_lag} 个工作日" if is_stale else "数据时效正常"
+freshness_class = "hero-badge stale" if is_stale else "hero-badge"
 st.markdown(f'<div class="hero"><div class="eyebrow">Commodity Quant Agent · Daily Research</div><h1>{page}</h1>'
             f'<p>黑色与新能源商品的量价、尾部风险、持仓结构与历史状态研究。所有统计来自确定性引擎。</p>'
-            f'<span class="hero-badge">DATA CUT · {latest_date:%Y-%m-%d}</span></div>', unsafe_allow_html=True)
+            f'<span class="{freshness_class}">DATA CUT · {latest_date:%Y-%m-%d} · {freshness_text}</span></div>', unsafe_allow_html=True)
 
 sym = features[features.symbol == symbol].sort_values("trade_date")
 latest_sym = sym.iloc[-1] if not sym.empty else None
@@ -172,12 +215,13 @@ if page == "市场总览":
     overview = latest_bars[["symbol", "contract", "close", "source", "research_eligible"]].merge(
         latest_features[["symbol", "market_state", "state_change", "momentum20", "rv20", "cvar95", "oi_change_pct"]], on="symbol", how="left")
     overview["品种"] = overview.symbol.map(lambda x: f"{x} · {SYMBOLS[x]['name']}")
-    overview["状态"] = overview.market_state.fillna("DATA_LIMITED")
+    overview["状态"] = overview.market_state.map(state_display)
+    overview["状态变化"] = overview.state_change.map(state_change_display)
     overview["20日动量"] = overview.momentum20.map(pct); overview["RV20"] = overview.rv20.map(pct)
     overview["CVaR95"] = overview.cvar95.map(pct); overview["OI变化"] = overview.oi_change_pct.map(pct)
     overview["研究覆盖"] = np.where(overview.research_eligible.fillna(False), "完整", "价格事实")
-    st.dataframe(overview[["品种", "contract", "close", "状态", "state_change", "20日动量", "RV20", "CVaR95", "OI变化", "研究覆盖", "source"]]
-                 .rename(columns={"contract": "主力合约", "close": "收盘", "state_change": "状态变化", "source": "来源"}), width="stretch", hide_index=True, height=360)
+    st.dataframe(overview[["品种", "contract", "close", "状态", "状态变化", "20日动量", "RV20", "CVaR95", "OI变化", "研究覆盖", "source"]]
+                 .rename(columns={"contract": "主力合约", "close": "收盘", "source": "来源"}), width="stretch", hide_index=True, height=360)
     section("归一化价格走势", "近约 252 个交易日以各自首日为 100，便于比较相对表现。")
     recent = bars[bars.trade_date >= latest_date - pd.Timedelta(days=390)][["trade_date", "symbol", "close"]].copy()
     recent["价格指数"] = recent.groupby("symbol")["close"].transform(lambda s: s / s.iloc[0] * 100)
@@ -232,7 +276,7 @@ elif page == "择时状态":
     else:
         state = latest_sym.get("market_state", "TRANSITION")
         st.markdown(state_pill(state), unsafe_allow_html=True)
-        st.caption(f"状态变化 · {latest_sym.get('state_change', '—')}")
+        st.caption(f"状态变化 · {state_change_display(latest_sym.get('state_change'))}")
         cols = st.columns(5)
         items = [("Momentum 20", pct(latest_sym.get("momentum20")), "20 日动量"), ("价格分位", pct(latest_sym.get("price_pct_120")), "120 日位置"),
                  ("Hurst R/S", fmt(latest_sym.get("hurst_rs_120"), 3), "算法固定 R/S"), ("Katz FD", fmt(latest_sym.get("fractal_katz_120"), 3), "算法固定 Katz"),
@@ -299,6 +343,8 @@ elif page == "数据质量":
     with cols[2]: metric_card("提醒", str(int(severity_counts.get("WARN", 0))), "WARN")
     with cols[3]: metric_card("错误", str(int(severity_counts.get("ERROR", 0))), "ERROR")
     section("质量检查明细", "覆盖最新时间、字段缺失、数据源、清洗、合约换月、研究资格和样本不足。")
+    if is_stale:
+        st.markdown(f'<div class="warning-box"><b>行情时效提醒：</b>最新数据为 {latest_date:%Y-%m-%d}，相对上海当前日期滞后 {business_lag} 个工作日。公开源本次未返回更新记录，请勿将旧数据当作实时行情。</div>', unsafe_allow_html=True)
     severity_filter = st.multiselect("严重程度", ["ERROR", "WARN", "OK"], default=["ERROR", "WARN"])
     filtered = quality[quality.severity.isin(severity_filter)] if severity_filter else quality
     st.dataframe(filtered, width="stretch", hide_index=True, height=510)

@@ -7,12 +7,16 @@
 ```powershell
 $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
 cd commodity_quant_agent
-& $py -m scheduler.bootstrap --start 20200101
-& $py -m scheduler.daily_report
-& $py -m streamlit run dashboard/app.py
+& $py -m venv .venv
+& .\.venv\Scripts\python.exe -m pip install --no-cache-dir -r requirements.txt
+& .\.venv\Scripts\python.exe -m scheduler.bootstrap --start 20200101
+& .\.venv\Scripts\python.exe -m scheduler.daily_report
+& .\.venv\Scripts\python.exe -m streamlit run dashboard/app.py
 ```
 
 跨电脑临时访问和长期部署见 `docs/deployment.md`；公网模式支持通过 `DASHBOARD_PASSWORD` 启用登录保护。
+
+看板会在页首显示数据截止日及工作日滞后。出现红色滞后标记时，页面中的数值仍是可审计历史事实，但不应被当作实时行情。
 
 首次运行会从公开 API 下载 8 个品种的真实单合约日线。系统按成交量优先、持仓量辅助、20% 挑战阈值和 2 日确认生成主力序列；换月日收益使用新主力自身昨收，研究价格采用向前加差复权，杜绝把合约跳空计入波动率和尾部风险。
 

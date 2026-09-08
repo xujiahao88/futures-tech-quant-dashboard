@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 import numpy as np
 import pandas as pd
@@ -22,8 +23,14 @@ def run_quality_checks(bars: pd.DataFrame, features: pd.DataFrame | None = None)
         invalid_ohlc = int(((group["high"] < group[["open", "close", "low"]].max(axis=1)) | (group["low"] > group[["open", "close", "high"]].min(axis=1))).sum())
         add(symbol, "daily_bars", "ERROR" if invalid_ohlc else "OK", "ohlc_integrity", str(invalid_ohlc))
         latest = pd.to_datetime(group["trade_date"]).max()
-        stale_days = (pd.Timestamp.now().normalize() - latest.normalize()).days
-        add(symbol, "daily_bars", "WARN" if stale_days > 5 else "OK", "freshness", f"latest={latest.date()}, calendar_days={stale_days}")
+        shanghai_today = pd.Timestamp(datetime.now(ZoneInfo("Asia/Shanghai")).date())
+        stale_days = max(0, (shanghai_today - latest.normalize()).days)
+        business_lag = int(np.busday_count(
+            (latest.normalize() + pd.Timedelta(days=1)).date(),
+            (shanghai_today + pd.Timedelta(days=1)).date(),
+        )) if latest.normalize() < shanghai_today else 0
+        add(symbol, "daily_bars", "WARN" if business_lag > 1 else "OK", "freshness",
+            f"latest={latest.date()}, business_days_lag={business_lag}, calendar_days={stale_days}")
         lineage = set(group.get("lineage_status", pd.Series(dtype=str)).dropna().astype(str))
         add(symbol, "daily_bars", "WARN" if "provider_unavailable" in lineage else "OK", "contract_lineage", ",".join(sorted(lineage)) or "missing")
         roll_count = int(group.get("roll_flag", pd.Series(False, index=group.index)).fillna(False).sum())
