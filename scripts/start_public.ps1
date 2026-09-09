@@ -5,7 +5,12 @@ param(
 
 $ErrorActionPreference = "Stop"
 $ProjectPath = Split-Path -Parent $PSScriptRoot
-$PythonPath = "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+$VenvPython = Join-Path $ProjectPath ".venv\Scripts\python.exe"
+$PythonPath = if (Test-Path -LiteralPath $VenvPython) {
+    $VenvPython
+} else {
+    "C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+}
 $CloudflaredPath = Join-Path $ProjectPath "tools\cloudflared.exe"
 
 if (-not (Test-Path -LiteralPath $CloudflaredPath)) {
