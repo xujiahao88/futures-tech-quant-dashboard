@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data/raw/
+data/minute/
+data/tick/
+data/commodity_quant.duckdb
+tools/cloudflared.exe
+reports/dashboard_debug.png
+reports/dashboard_preview.png
+reports/dashboard_preview_v2.png
