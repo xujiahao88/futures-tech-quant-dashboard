@@ -11,8 +11,11 @@ cd commodity_quant_agent
 & .\.venv\Scripts\python.exe -m pip install --no-cache-dir -r requirements.txt
 & .\.venv\Scripts\python.exe -m scheduler.bootstrap --start 20200101
 & .\.venv\Scripts\python.exe -m scheduler.daily_report
-& .\.venv\Scripts\python.exe -m streamlit run dashboard/app.py
+& .\scripts\start_local.ps1
 ```
+
+后台启动成功后打开 `http://127.0.0.1:8501`。运行日志和进程号保存在
+`reports/runtime/`；该后台服务不会随当前终端或 Codex 任务结束而关闭。
 
 跨电脑临时访问和长期部署见 `docs/deployment.md`；公网模式支持通过 `DASHBOARD_PASSWORD` 启用登录保护。
 

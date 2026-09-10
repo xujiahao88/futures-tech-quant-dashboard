@@ -11,3 +11,4 @@ tools/cloudflared.exe
 reports/dashboard_debug.png
 reports/dashboard_preview.png
 reports/dashboard_preview_v2.png
+reports/runtime/
