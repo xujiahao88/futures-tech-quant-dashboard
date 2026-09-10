@@ -16,9 +16,16 @@ const viewport = {
   });
   const page = await browser.newPage({ viewport });
   const consoleErrors = [];
+  const pageErrors = [];
+  const failedRequests = [];
   page.on("console", (message) => {
     if (message.type() === "error") consoleErrors.push(message.text());
   });
+  page.on("pageerror", (error) => pageErrors.push(error.message));
+  page.on("requestfailed", (request) => failedRequests.push({
+    url: request.url(),
+    failure: request.failure()?.errorText || "unknown",
+  }));
 
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 });
   if (password) {
@@ -62,11 +69,15 @@ const viewport = {
     undefinedCount,
     deployButtonCount,
     consoleErrorCount: consoleErrors.length,
+    pageErrorCount: pageErrors.length,
+    failedRequestCount: failedRequests.length,
+    pageErrors,
+    failedRequests,
     bodyTextLength: bodyText.length,
     heroCount,
     heroVisible,
     documentSize,
     sidebarSelectStyle,
   }));
-  if (exceptionCount || undefinedCount || consoleErrors.length || !heroVisible) process.exit(1);
+  if (exceptionCount || undefinedCount || consoleErrors.length || pageErrors.length || !heroVisible) process.exit(1);
 })();
