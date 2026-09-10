@@ -1,6 +1,10 @@
 param(
     [int]$Port = 8501,
-    [string]$Password = ""
+    [string]$Password = "",
+    # Some corporate browsers/proxies block the Streamlit WebSocket handshake
+    # used by a Cloudflare Quick Tunnel.  This scoped mode relaxes CORS for the
+    # temporary, password-protected URL only; it does not change local defaults.
+    [switch]$CompatibilityMode
 )
 
 $ErrorActionPreference = "Stop"
@@ -22,9 +26,18 @@ if ([string]::IsNullOrWhiteSpace($Password)) {
 
 $env:DASHBOARD_PASSWORD = $Password
 $streamlitArgs = @("-m", "streamlit", "run", "streamlit_app.py", "--server.address=127.0.0.1", "--server.port=$Port", "--server.headless=true")
+if ($CompatibilityMode) {
+    # Streamlit documents these two switches for remote-loading failures caused
+    # by proxy/CORS/WebSocket negotiation.  XSRF protection remains enabled.
+    $streamlitArgs += "--server.enableCORS=false"
+    $streamlitArgs += "--server.enableWebsocketCompression=false"
+}
 $process = Start-Process -FilePath $PythonPath -ArgumentList $streamlitArgs -WorkingDirectory $ProjectPath -WindowStyle Hidden -PassThru
 
 Write-Host "Dashboard password: $Password"
 Write-Host "Streamlit PID: $($process.Id)"
+if ($CompatibilityMode) {
+    Write-Host "Compatibility mode: enabled (temporary tunnel CORS relaxed; XSRF protection remains enabled)."
+}
 Write-Host "Starting temporary Cloudflare URL. Keep this window open."
 & $CloudflaredPath tunnel --url "http://127.0.0.1:$Port"
