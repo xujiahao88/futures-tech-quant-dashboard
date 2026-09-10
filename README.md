@@ -46,6 +46,14 @@ python -m scheduler.daily_report
 python -m pytest -q
 ```
 
+## 收盘后自动更新
+
+合并到 `main` 后，GitHub Actions 工作流 `Daily market data update` 会在每个工作日
+17:15（上海时间）拉取公开日终数据、更新活跃合约的主力治理、重算特征并生成日报。若数据源
+尚未发布或请求失败，任务保留上一次可审计数据，并在数据质量页继续显示时效告警，不会伪造
+“最新”数据。可在 GitHub Actions 页面用 `Run workflow` 手动补跑；提交的新数据会自动触发
+Streamlit Community Cloud 重载。
+
 浏览器视觉检查（需本机已有 Playwright 与 Edge）：
 
 ```powershell

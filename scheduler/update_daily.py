@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 import numpy as np
 import pandas as pd
@@ -15,6 +15,29 @@ from config import DATA, REPORTS, SYMBOLS, ensure_dirs
 from data_quality import run_quality_checks
 from database.db import Database
 from features.feature_pipeline import calculate_features
+
+
+def _active_contracts(symbol: str, as_of: date | None = None) -> set[str]:
+    """Return delivery contracts that can still affect today's main-contract vote.
+
+    Historical files are retained for reproducible research. Only the current
+    and future delivery contracts are re-fetched after each close, so daily
+    automation stays bounded while the roll decision sees fresh volume/OI.
+    """
+    as_of = as_of or date.today()
+    current_ym = (as_of.year % 100) * 100 + as_of.month
+    candidates = contract_universe(symbol, as_of.year, as_of.year + 1)
+    return {contract for contract in candidates if int(contract[-4:]) >= current_ym}
+
+
+def _merge_contract_history(cached: pd.DataFrame | None, fresh: pd.DataFrame) -> pd.DataFrame:
+    """Preserve all cached history while replacing overlapping dates with fresh EOD rows."""
+    frames = [frame for frame in (cached, fresh) if frame is not None and not frame.empty]
+    if not frames:
+        return pd.DataFrame()
+    merged = pd.concat(frames, ignore_index=True)
+    merged["trade_date"] = pd.to_datetime(merged["trade_date"])
+    return merged.sort_values("trade_date").drop_duplicates("trade_date", keep="last").reset_index(drop=True)
 
 
 def _provider_to_bar(frame: pd.DataFrame) -> pd.DataFrame:
@@ -102,14 +125,21 @@ def update_daily(start: str = "20200101", offline: bool = False) -> dict:
         except Exception as exc:
             errors.append({"symbol": symbol, "stage": "provider_continuous", "error": repr(exc)})
 
+    active_contracts = {symbol: _active_contracts(symbol) for symbol in SYMBOLS}
+
     def fetch_one(symbol: str, contract: str):
         cache = DATA / "raw" / "contracts" / symbol / f"{contract}.parquet"
         try:
-            if not offline and not cache.exists():
+            cached = pd.read_parquet(cache) if cache.exists() else None
+            # Re-fetch only contracts that are still tradeable; old contracts
+            # remain immutable history in the research cache.
+            if not offline and (cached is None or contract in active_contracts[symbol]):
                 result = SinaDailyCollector().fetch_contract(symbol, contract)
                 if not result.frame.empty:
-                    save_result(result, cache)
-            return symbol, contract, pd.read_parquet(cache) if cache.exists() else None, None
+                    merged = _merge_contract_history(cached, result.frame)
+                    merged.to_parquet(cache, index=False)
+                    cached = merged
+            return symbol, contract, cached, None
         except Exception as exc:
             message = repr(exc)
             if "Expected axis has 0 elements" in message:

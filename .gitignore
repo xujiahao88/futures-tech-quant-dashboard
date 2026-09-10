@@ -3,7 +3,15 @@
 __pycache__/
 .pytest_cache/
 *.pyc
-data/raw/
+# The governed-contract cache is intentionally versioned: GitHub Actions needs
+# it to preserve full historical roll lineage before appending each new EOD bar.
+data/raw/*
+!data/raw/contracts/
+!data/raw/contracts/**
+!data/raw/provider_continuous/
+!data/raw/provider_continuous/**
+!data/raw/official/
+!data/raw/official/**
 data/minute/
 data/tick/
 data/commodity_quant.duckdb
