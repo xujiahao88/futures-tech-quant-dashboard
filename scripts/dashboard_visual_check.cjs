@@ -2,6 +2,7 @@ const { chromium } = require("playwright");
 
 const url = process.env.DASHBOARD_URL || "http://127.0.0.1:8501";
 const password = process.env.DASHBOARD_PASSWORD || "";
+const targetPage = process.env.DASHBOARD_PAGE || "";
 const output = process.env.DASHBOARD_SCREENSHOT || "reports/dashboard_preview_final.png";
 const viewport = {
   width: Number(process.env.DASHBOARD_VIEWPORT_WIDTH || 1600),
@@ -40,6 +41,11 @@ const viewport = {
     }
   }
   await page.locator('[data-testid="stAppViewContainer"]').waitFor({ timeout: 60000 });
+  if (targetPage) {
+    const navLabel = page.locator('[data-testid="stRadio"] label').filter({ hasText: targetPage }).first();
+    await navLabel.locator('input[type="radio"]').evaluate((input) => input.click());
+    await page.locator(".hero h1").filter({ hasText: targetPage }).waitFor({ state: "visible", timeout: 30000 });
+  }
   await page.locator(".hero h1").waitFor({ state: "visible", timeout: 15000 }).catch(() => null);
   await page.waitForTimeout(3500);
 
@@ -63,6 +69,7 @@ const viewport = {
 
   console.log(JSON.stringify({
     url,
+    targetPage,
     output,
     viewport,
     exceptionCount,
@@ -81,3 +88,4 @@ const viewport = {
   }));
   if (exceptionCount || undefinedCount || consoleErrors.length || pageErrors.length || !heroVisible) process.exit(1);
 })();
+
