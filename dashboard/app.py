@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hmac
+import html
 import os
 import sys
 from datetime import datetime
@@ -19,6 +20,16 @@ if str(ROOT) not in sys.path:
 
 from backtest.analog_search import find_analogs
 from config import DATA, REPORTS, SYMBOLS
+from dashboard.explanations import (
+    PAGE_GUIDES,
+    analog_readout,
+    board_readout,
+    positioning_readout,
+    state_explanation,
+    survival_readout,
+    symbol_plain_readout,
+    timing_readout,
+)
 
 st.set_page_config(page_title="Commodity Quant Lab", page_icon="◈", layout="wide", initial_sidebar_state="auto")
 
@@ -67,6 +78,14 @@ html, body, [class*="css"] { font-family:Inter,"Noto Sans SC","Microsoft YaHei",
 .state-pill { display:inline-block; color:white; border-radius:999px; padding:5px 11px; font-weight:700; font-size:.72rem; letter-spacing:.03em; }
 .coverage { padding:12px 15px; border-radius:12px; background:#EFF8FF; border-left:4px solid #2864DC; color:#344054; font-size:.84rem; margin:.5rem 0 1rem; }
 .warning-box { padding:14px 16px; border-radius:12px; background:#FFF8EB; border:1px solid #FDE3AD; color:#7A4D08; font-size:.84rem; }
+.insight-card { background:linear-gradient(135deg,#F0F6FF 0%,#F4FBFA 100%); border:1px solid #D7E5FA; border-radius:18px; padding:19px 21px; margin:.65rem 0 1rem; color:#243B64; box-shadow:0 8px 22px rgba(40,100,220,.055); }
+.insight-card h3 { color:#0B1739; font-size:1rem; margin:0 0 .45rem; }
+.insight-card p { margin:.28rem 0; font-size:.88rem; line-height:1.72; }
+.insight-label { display:inline-block; color:#2864DC; background:#E5EEFF; border-radius:999px; padding:3px 8px; margin-right:7px; font-size:.69rem; font-weight:700; letter-spacing:.04em; }
+.plain-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:.55rem 0 1rem; }
+.plain-item { background:#FFF; border:1px solid #E7EBF2; border-radius:13px; padding:12px 14px; color:#475467; font-size:.81rem; line-height:1.58; }
+.plain-item b { color:#0B1739; }
+.symbol-note { color:#344054; background:#FAFBFD; border-left:3px solid #7FA7F5; padding:9px 12px; border-radius:8px; font-size:.79rem; line-height:1.55; }
 .footer { color:#98A2B3; font-size:.72rem; text-align:center; margin-top:2.5rem; padding-top:1rem; border-top:1px solid #EEF1F6; }
 [data-testid="stDataFrame"] { border:1px solid #E7EBF2; border-radius:14px; overflow:hidden; }
 [data-testid="stPlotlyChart"] { background:white; border:1px solid #E7EBF2; border-radius:16px; padding:7px; box-shadow:0 6px 18px rgba(17,38,82,.04); }
@@ -79,6 +98,8 @@ html, body, [class*="css"] { font-family:Inter,"Noto Sans SC","Microsoft YaHei",
   .hero p { font-size:.84rem; line-height:1.65; }
   .metric-card { min-height:96px; padding:13px 14px; }
   .metric-value { font-size:1.3rem; }
+  .plain-grid { grid-template-columns:1fr; }
+  .insight-card { padding:16px 17px; }
   [data-testid="stDataFrame"] { font-size:.78rem; }
 }
 </style>
@@ -128,6 +149,25 @@ def pct(value, digits=1):
 
 def metric_card(label, value, note=""):
     st.markdown(f'<div class="metric-card"><div class="metric-label">{label}</div><div class="metric-value">{value}</div><div class="metric-note">{note}</div></div>', unsafe_allow_html=True)
+
+
+def insight_card(title, paragraphs, label="通俗解读"):
+    body = "".join(f"<p>{html.escape(str(paragraph))}</p>" for paragraph in paragraphs if paragraph)
+    st.markdown(
+        f'<div class="insight-card"><h3><span class="insight-label">{html.escape(label)}</span>{html.escape(title)}</h3>{body}</div>',
+        unsafe_allow_html=True,
+    )
+
+
+def beginner_guide(page_name):
+    items = PAGE_GUIDES.get(page_name, [])
+    if not items:
+        return
+    cards = "".join(
+        f'<div class="plain-item"><b>{html.escape(title)}</b><br>{html.escape(text)}</div>'
+        for title, text in items
+    )
+    st.markdown(f'<div class="plain-grid">{cards}</div>', unsafe_allow_html=True)
 
 
 def section(title, note=""):
@@ -190,6 +230,7 @@ with st.sidebar:
     page = st.radio("页面导航", PAGES, label_visibility="collapsed")
     st.markdown("---")
     symbol = st.selectbox("研究品种", list(SYMBOLS), format_func=lambda s: f"{s} · {SYMBOLS[s]['name']}")
+    beginner_mode = st.toggle("新手解读模式", value=True, help="在指标附近显示通俗解释、当前读法和使用限制。")
     st.caption(f"数据截止 · {latest_date:%Y-%m-%d}")
     st.caption(f"研究覆盖 · {len(research_symbols)}/{len(SYMBOLS)}")
     st.markdown("---")
@@ -211,6 +252,21 @@ if page == "市场总览":
     with cols[1]: metric_card("完整研究覆盖", f"{len(research_symbols)}/8", "合约血缘合格")
     with cols[2]: metric_card("最新交易日", f"{latest_date:%m-%d}", f"{latest_date:%Y}")
     with cols[3]: metric_card("质量提醒", str(int((quality.severity == "WARN").sum())), "WARN · 不含硬错误")
+    summary_frame = latest_bars[["symbol", "contract", "close", "source", "research_eligible"]].merge(
+        latest_features, on="symbol", how="left", suffixes=("_bar", "")
+    )
+    if beginner_mode:
+        reading = board_readout(
+            summary_frame,
+            SYMBOLS,
+            business_lag,
+            int((quality.severity == "WARN").sum()),
+        )
+        insight_card(
+            "今天的市场，用一分钟看懂",
+            [reading["headline"], *reading["facts"], reading["changes"], reading["risk"]],
+            "今日归纳",
+        )
     section("市场状态矩阵", "空值代表没有合格数据，不代表风险为零。")
     overview = latest_bars[["symbol", "contract", "close", "source", "research_eligible"]].merge(
         latest_features[["symbol", "market_state", "state_change", "momentum20", "rv20", "cvar95", "oi_change_pct"]], on="symbol", how="left")
@@ -220,8 +276,20 @@ if page == "市场总览":
     overview["20日动量"] = overview.momentum20.map(pct); overview["RV20"] = overview.rv20.map(pct)
     overview["CVaR95"] = overview.cvar95.map(pct); overview["OI变化"] = overview.oi_change_pct.map(pct)
     overview["研究覆盖"] = np.where(overview.research_eligible.fillna(False), "完整", "价格事实")
-    st.dataframe(overview[["品种", "contract", "close", "状态", "状态变化", "20日动量", "RV20", "CVaR95", "OI变化", "研究覆盖", "source"]]
+    if beginner_mode:
+        overview["通俗解读"] = overview.apply(
+            lambda row: symbol_plain_readout(row, f"{SYMBOLS[row.symbol]['name']}："), axis=1
+        )
+    overview_columns = ["品种", "contract", "close", "状态", "状态变化", "20日动量", "RV20", "CVaR95", "OI变化", "研究覆盖", "source"]
+    if beginner_mode:
+        overview_columns.insert(5, "通俗解读")
+    st.dataframe(overview[overview_columns]
                  .rename(columns={"contract": "主力合约", "close": "收盘", "source": "来源"}), width="stretch", hide_index=True, height=360)
+    if beginner_mode:
+        with st.expander("这些市场状态分别是什么意思？"):
+            for state in overview["market_state"].dropna().drop_duplicates():
+                st.markdown(f"**{state_display(state)}**")
+                st.caption(state_explanation(state))
     section("归一化价格走势", "近约 252 个交易日以各自首日为 100，便于比较相对表现。")
     recent = bars[bars.trade_date >= latest_date - pd.Timedelta(days=390)][["trade_date", "symbol", "close"]].copy()
     recent["价格指数"] = recent.groupby("symbol")["close"].transform(lambda s: s / s.iloc[0] * 100)
@@ -238,6 +306,12 @@ elif page == "生存风险":
                   ("回撤时长", fmt(latest_sym.get("drawdown_duration"), 0, " 日"), "当前水下期")]
         for col, item in zip(cols, values):
             with col: metric_card(*item)
+        if beginner_mode:
+            insight_card(
+                f"{SYMBOLS[symbol]['name']}的风险怎么读",
+                [survival_readout(latest_sym, sym)],
+            )
+            beginner_guide("生存风险")
         section(f"{symbol} 波动率与尾部风险", "99% 指标不足 500 个有效样本时显示为空。")
         left, right = st.columns([1.25, 1])
         with left:
@@ -257,6 +331,12 @@ elif page == "持仓结构":
                  ("成交/OI", fmt(latest_sym.get("volume_oi"), 2), "换手强度"), ("研究 Roll Yield", pct(latest_sym.get("roll_yield_research")), "(near-far)/near")]
         for col, item in zip(cols, items):
             with col: metric_card(*item)
+        if beginner_mode:
+            insight_card(
+                f"{SYMBOLS[symbol]['name']}的价仓关系怎么读",
+                [positioning_readout(latest_sym)],
+            )
+            beginner_guide("持仓结构")
         section(f"{symbol} 价格 × 持仓", "价格使用防换月跳空连续价；持仓量为当日实际主力合约。")
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=sym.trade_date, y=sym.adjusted_close, name="连续价格", line=dict(color=COLORS["blue"], width=2.2)))
@@ -283,6 +363,12 @@ elif page == "择时状态":
                  ("RV 期限结构", fmt(latest_sym.get("rv_term_structure"), 2), "RV5 / RV60")]
         for col, item in zip(cols, items):
             with col: metric_card(*item)
+        if beginner_mode:
+            insight_card(
+                f"{SYMBOLS[symbol]['name']}当前处于什么阶段",
+                [timing_readout(latest_sym)],
+            )
+            beginner_guide("择时状态")
         section(f"{symbol} 趋势骨架", "均线和价格采用连续研究序列；换月跳空不会进入拐点识别。")
         fig = go.Figure()
         for col, color, width in [("adjusted_close", "#0B1739", 2.4), ("ma5", "#00A7B5", 1.3), ("ma20", "#2864DC", 1.5), ("ma60", "#E99A2B", 1.5)]:
@@ -305,6 +391,9 @@ elif page == "历史相似":
         with cols[0]: metric_card("相似样本", str(len(analogs)), "排除近 60 天")
         with cols[1]: metric_card("最佳相似度", fmt(analogs.similarity_score.max() if not analogs.empty else np.nan, 3), "1 / (1 + distance)")
         with cols[2]: metric_card("当前状态", str(latest_sym.get("market_state", "—")), "仅作状态分类")
+        if beginner_mode:
+            insight_card("相似历史告诉了我们什么", [analog_readout(analogs)])
+            beginner_guide("历史相似")
         section("最相似历史日期", "未来收益是历史样本真实后验，用于情景参照，不代表当前预测。")
         st.dataframe(analogs.rename(columns={"trade_date": "日期", "market_state": "当时状态", "similarity_score": "相似度", "future_return_5d": "未来5日",
                                                       "future_return_20d": "未来20日", "future_return_40d": "未来40日", "future_max_drawdown": "未来最大回撤",
@@ -317,6 +406,15 @@ elif page == "历史相似":
 
 elif page == "横截面雷达":
     section("黑色与新能源强弱画像", "维度转换为当日品种横截面 0–1 分位；缺失时不伪造分数。")
+    if beginner_mode:
+        insight_card(
+            "雷达图不是综合打分",
+            [
+                "向外伸得越长，只表示该品种在当天 8 个品种中的相对排名更高。趋势靠外偏强；波动、尾部风险、流动性冲击和拥挤度靠外则意味着风险更高。",
+                "因此不能把雷达面积最大的品种理解为“最好”，应逐个维度查看。",
+            ],
+        )
+        beginner_guide("横截面雷达")
     latest = latest_features.copy()
     score_specs = {"趋势": ("momentum20", 1), "持仓": ("oi_percentile_250", 1), "波动": ("rv20", 1), "尾部风险": ("cvar95", -1), "流动性冲击": ("amihud", 1), "拥挤度": ("crowding_percentile", 1)}
     for label, (column, direction) in score_specs.items():
@@ -342,6 +440,16 @@ elif page == "数据质量":
     with cols[1]: metric_card("通过", str(int(severity_counts.get("OK", 0))), "OK")
     with cols[2]: metric_card("提醒", str(int(severity_counts.get("WARN", 0))), "WARN")
     with cols[3]: metric_card("错误", str(int(severity_counts.get("ERROR", 0))), "ERROR")
+    if beginner_mode:
+        errors = int(severity_counts.get("ERROR", 0))
+        warns = int(severity_counts.get("WARN", 0))
+        conclusion = (
+            f"当前有 {errors} 项关键错误，涉及的研究结论应暂停使用。"
+            if errors
+            else f"当前没有关键错误，有 {warns} 项提醒。提醒通常来自字段缺失、样本不足或清洗记录，页面仍可查看，但要结合具体限制。"
+        )
+        insight_card("这些质量提示会不会影响阅读", [conclusion, "系统不会把缺失值当成 0，也不会用日线数据伪造分钟或 Tick 指标。"])
+        beginner_guide("数据质量")
     section("质量检查明细", "覆盖最新时间、字段缺失、数据源、清洗、合约换月、研究资格和样本不足。")
     if is_stale:
         st.markdown(f'<div class="warning-box"><b>行情时效提醒：</b>最新数据为 {latest_date:%Y-%m-%d}，相对上海当前日期滞后 {business_lag} 个工作日。公开源本次未返回更新记录，请勿将旧数据当作实时行情。</div>', unsafe_allow_html=True)
@@ -354,3 +462,4 @@ elif page == "数据质量":
             st.code(source_probe.read_text(encoding="utf-8"), language="json")
 
 st.markdown('<div class="footer">Commodity Quant Agent · 数据事实 / 计算结果 / 研究解释 / 待验证假设</div>', unsafe_allow_html=True)
+
