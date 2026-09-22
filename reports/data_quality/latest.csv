@@ -1,97 +1,97 @@
 ﻿checked_at,symbol,dataset,severity,check_name,details
-2026-09-21 09:31:37.780830+00:00,HC,daily_bars,OK,required_columns,complete
-2026-09-21 09:31:37.780830+00:00,HC,daily_bars,OK,duplicate_keys,0
-2026-09-21 09:31:37.780830+00:00,HC,daily_bars,OK,ohlc_integrity,0
-2026-09-21 09:31:37.780830+00:00,HC,daily_bars,OK,freshness,"latest=2026-09-21, business_days_lag=0, calendar_days=0"
-2026-09-21 09:31:37.780830+00:00,HC,daily_bars,OK,contract_lineage,complete
-2026-09-21 09:31:37.780830+00:00,HC,daily_bars,OK,contract_rolls,20
-2026-09-21 09:31:37.780830+00:00,HC,daily_bars,WARN,missing_fields,turnover
-2026-09-21 09:31:37.780830+00:00,HC,daily_bars,WARN,cleaning_adjustments,3
-2026-09-21 09:31:37.780830+00:00,HC,daily_bars,OK,research_eligibility,eligible_rows=1630/1630
-2026-09-21 09:31:37.780830+00:00,I,daily_bars,OK,required_columns,complete
-2026-09-21 09:31:37.780830+00:00,I,daily_bars,OK,duplicate_keys,0
-2026-09-21 09:31:37.780830+00:00,I,daily_bars,OK,ohlc_integrity,0
-2026-09-21 09:31:37.780830+00:00,I,daily_bars,OK,freshness,"latest=2026-09-21, business_days_lag=0, calendar_days=0"
-2026-09-21 09:31:37.780830+00:00,I,daily_bars,OK,contract_lineage,complete
-2026-09-21 09:31:37.780830+00:00,I,daily_bars,OK,contract_rolls,20
-2026-09-21 09:31:37.780830+00:00,I,daily_bars,WARN,missing_fields,turnover
-2026-09-21 09:31:37.780830+00:00,I,daily_bars,WARN,cleaning_adjustments,108
-2026-09-21 09:31:37.780830+00:00,I,daily_bars,OK,research_eligibility,eligible_rows=1630/1630
-2026-09-21 09:31:37.780830+00:00,J,daily_bars,OK,required_columns,complete
-2026-09-21 09:31:37.780830+00:00,J,daily_bars,OK,duplicate_keys,0
-2026-09-21 09:31:37.780830+00:00,J,daily_bars,OK,ohlc_integrity,0
-2026-09-21 09:31:37.780830+00:00,J,daily_bars,OK,freshness,"latest=2026-09-21, business_days_lag=0, calendar_days=0"
-2026-09-21 09:31:37.780830+00:00,J,daily_bars,OK,contract_lineage,complete
-2026-09-21 09:31:37.780830+00:00,J,daily_bars,OK,contract_rolls,20
-2026-09-21 09:31:37.780830+00:00,J,daily_bars,WARN,missing_fields,turnover
-2026-09-21 09:31:37.780830+00:00,J,daily_bars,WARN,cleaning_adjustments,108
-2026-09-21 09:31:37.780830+00:00,J,daily_bars,OK,research_eligibility,eligible_rows=1630/1630
-2026-09-21 09:31:37.780830+00:00,JM,daily_bars,OK,required_columns,complete
-2026-09-21 09:31:37.780830+00:00,JM,daily_bars,OK,duplicate_keys,0
-2026-09-21 09:31:37.780830+00:00,JM,daily_bars,OK,ohlc_integrity,0
-2026-09-21 09:31:37.780830+00:00,JM,daily_bars,OK,freshness,"latest=2026-09-21, business_days_lag=0, calendar_days=0"
-2026-09-21 09:31:37.780830+00:00,JM,daily_bars,OK,contract_lineage,complete
-2026-09-21 09:31:37.780830+00:00,JM,daily_bars,OK,contract_rolls,20
-2026-09-21 09:31:37.780830+00:00,JM,daily_bars,WARN,missing_fields,turnover
-2026-09-21 09:31:37.780830+00:00,JM,daily_bars,WARN,cleaning_adjustments,108
-2026-09-21 09:31:37.780830+00:00,JM,daily_bars,OK,research_eligibility,eligible_rows=1630/1630
-2026-09-21 09:31:37.780830+00:00,LC,daily_bars,OK,required_columns,complete
-2026-09-21 09:31:37.780830+00:00,LC,daily_bars,OK,duplicate_keys,0
-2026-09-21 09:31:37.780830+00:00,LC,daily_bars,OK,ohlc_integrity,0
-2026-09-21 09:31:37.780830+00:00,LC,daily_bars,OK,freshness,"latest=2026-09-21, business_days_lag=0, calendar_days=0"
-2026-09-21 09:31:37.780830+00:00,LC,daily_bars,OK,contract_lineage,complete
-2026-09-21 09:31:37.780830+00:00,LC,daily_bars,OK,contract_rolls,11
-2026-09-21 09:31:37.780830+00:00,LC,daily_bars,WARN,missing_fields,turnover
-2026-09-21 09:31:37.780830+00:00,LC,daily_bars,WARN,cleaning_adjustments,1
-2026-09-21 09:31:37.780830+00:00,LC,daily_bars,OK,research_eligibility,eligible_rows=770/770
-2026-09-21 09:31:37.780830+00:00,PS,daily_bars,OK,required_columns,complete
-2026-09-21 09:31:37.780830+00:00,PS,daily_bars,OK,duplicate_keys,0
-2026-09-21 09:31:37.780830+00:00,PS,daily_bars,OK,ohlc_integrity,0
-2026-09-21 09:31:37.780830+00:00,PS,daily_bars,OK,freshness,"latest=2026-09-21, business_days_lag=0, calendar_days=0"
-2026-09-21 09:31:37.780830+00:00,PS,daily_bars,OK,contract_lineage,complete
-2026-09-21 09:31:37.780830+00:00,PS,daily_bars,OK,contract_rolls,9
-2026-09-21 09:31:37.780830+00:00,PS,daily_bars,WARN,missing_fields,turnover
-2026-09-21 09:31:37.780830+00:00,PS,daily_bars,OK,cleaning_adjustments,0
-2026-09-21 09:31:37.780830+00:00,PS,daily_bars,OK,research_eligibility,eligible_rows=422/422
-2026-09-21 09:31:37.780830+00:00,RB,daily_bars,OK,required_columns,complete
-2026-09-21 09:31:37.780830+00:00,RB,daily_bars,OK,duplicate_keys,0
-2026-09-21 09:31:37.780830+00:00,RB,daily_bars,OK,ohlc_integrity,0
-2026-09-21 09:31:37.780830+00:00,RB,daily_bars,OK,freshness,"latest=2026-09-21, business_days_lag=0, calendar_days=0"
-2026-09-21 09:31:37.780830+00:00,RB,daily_bars,OK,contract_lineage,complete
-2026-09-21 09:31:37.780830+00:00,RB,daily_bars,OK,contract_rolls,20
-2026-09-21 09:31:37.780830+00:00,RB,daily_bars,WARN,missing_fields,turnover
-2026-09-21 09:31:37.780830+00:00,RB,daily_bars,WARN,cleaning_adjustments,3
-2026-09-21 09:31:37.780830+00:00,RB,daily_bars,OK,research_eligibility,eligible_rows=1630/1630
-2026-09-21 09:31:37.780830+00:00,SI,daily_bars,OK,required_columns,complete
-2026-09-21 09:31:37.780830+00:00,SI,daily_bars,OK,duplicate_keys,0
-2026-09-21 09:31:37.780830+00:00,SI,daily_bars,OK,ohlc_integrity,0
-2026-09-21 09:31:37.780830+00:00,SI,daily_bars,OK,freshness,"latest=2026-09-21, business_days_lag=0, calendar_days=0"
-2026-09-21 09:31:37.780830+00:00,SI,daily_bars,OK,contract_lineage,complete
-2026-09-21 09:31:37.780830+00:00,SI,daily_bars,OK,contract_rolls,25
-2026-09-21 09:31:37.780830+00:00,SI,daily_bars,WARN,missing_fields,turnover
-2026-09-21 09:31:37.780830+00:00,SI,daily_bars,WARN,cleaning_adjustments,1
-2026-09-21 09:31:37.780830+00:00,SI,daily_bars,OK,research_eligibility,eligible_rows=909/909
-2026-09-21 09:31:37.780830+00:00,HC,features_daily,OK,sample_insufficiency,var99=ok
-2026-09-21 09:31:37.780830+00:00,HC,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,HC,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,I,features_daily,OK,sample_insufficiency,var99=ok
-2026-09-21 09:31:37.780830+00:00,I,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,I,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,J,features_daily,OK,sample_insufficiency,var99=ok
-2026-09-21 09:31:37.780830+00:00,J,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,J,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,JM,features_daily,OK,sample_insufficiency,var99=ok
-2026-09-21 09:31:37.780830+00:00,JM,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,JM,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,LC,features_daily,OK,sample_insufficiency,var99=ok
-2026-09-21 09:31:37.780830+00:00,LC,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,LC,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,PS,features_daily,WARN,sample_insufficiency,var99=insufficient_sample
-2026-09-21 09:31:37.780830+00:00,PS,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,PS,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,RB,features_daily,OK,sample_insufficiency,var99=ok
-2026-09-21 09:31:37.780830+00:00,RB,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,RB,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,SI,features_daily,OK,sample_insufficiency,var99=ok
-2026-09-21 09:31:37.780830+00:00,SI,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
-2026-09-21 09:31:37.780830+00:00,SI,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,HC,daily_bars,OK,required_columns,complete
+2026-09-22 09:30:04.891570+00:00,HC,daily_bars,OK,duplicate_keys,0
+2026-09-22 09:30:04.891570+00:00,HC,daily_bars,OK,ohlc_integrity,0
+2026-09-22 09:30:04.891570+00:00,HC,daily_bars,OK,freshness,"latest=2026-09-22, business_days_lag=0, calendar_days=0"
+2026-09-22 09:30:04.891570+00:00,HC,daily_bars,OK,contract_lineage,complete
+2026-09-22 09:30:04.891570+00:00,HC,daily_bars,OK,contract_rolls,20
+2026-09-22 09:30:04.891570+00:00,HC,daily_bars,WARN,missing_fields,turnover
+2026-09-22 09:30:04.891570+00:00,HC,daily_bars,WARN,cleaning_adjustments,3
+2026-09-22 09:30:04.891570+00:00,HC,daily_bars,OK,research_eligibility,eligible_rows=1631/1631
+2026-09-22 09:30:04.891570+00:00,I,daily_bars,OK,required_columns,complete
+2026-09-22 09:30:04.891570+00:00,I,daily_bars,OK,duplicate_keys,0
+2026-09-22 09:30:04.891570+00:00,I,daily_bars,OK,ohlc_integrity,0
+2026-09-22 09:30:04.891570+00:00,I,daily_bars,OK,freshness,"latest=2026-09-22, business_days_lag=0, calendar_days=0"
+2026-09-22 09:30:04.891570+00:00,I,daily_bars,OK,contract_lineage,complete
+2026-09-22 09:30:04.891570+00:00,I,daily_bars,OK,contract_rolls,20
+2026-09-22 09:30:04.891570+00:00,I,daily_bars,WARN,missing_fields,turnover
+2026-09-22 09:30:04.891570+00:00,I,daily_bars,WARN,cleaning_adjustments,108
+2026-09-22 09:30:04.891570+00:00,I,daily_bars,OK,research_eligibility,eligible_rows=1631/1631
+2026-09-22 09:30:04.891570+00:00,J,daily_bars,OK,required_columns,complete
+2026-09-22 09:30:04.891570+00:00,J,daily_bars,OK,duplicate_keys,0
+2026-09-22 09:30:04.891570+00:00,J,daily_bars,OK,ohlc_integrity,0
+2026-09-22 09:30:04.891570+00:00,J,daily_bars,OK,freshness,"latest=2026-09-22, business_days_lag=0, calendar_days=0"
+2026-09-22 09:30:04.891570+00:00,J,daily_bars,OK,contract_lineage,complete
+2026-09-22 09:30:04.891570+00:00,J,daily_bars,OK,contract_rolls,20
+2026-09-22 09:30:04.891570+00:00,J,daily_bars,WARN,missing_fields,turnover
+2026-09-22 09:30:04.891570+00:00,J,daily_bars,WARN,cleaning_adjustments,108
+2026-09-22 09:30:04.891570+00:00,J,daily_bars,OK,research_eligibility,eligible_rows=1631/1631
+2026-09-22 09:30:04.891570+00:00,JM,daily_bars,OK,required_columns,complete
+2026-09-22 09:30:04.891570+00:00,JM,daily_bars,OK,duplicate_keys,0
+2026-09-22 09:30:04.891570+00:00,JM,daily_bars,OK,ohlc_integrity,0
+2026-09-22 09:30:04.891570+00:00,JM,daily_bars,OK,freshness,"latest=2026-09-22, business_days_lag=0, calendar_days=0"
+2026-09-22 09:30:04.891570+00:00,JM,daily_bars,OK,contract_lineage,complete
+2026-09-22 09:30:04.891570+00:00,JM,daily_bars,OK,contract_rolls,20
+2026-09-22 09:30:04.891570+00:00,JM,daily_bars,WARN,missing_fields,turnover
+2026-09-22 09:30:04.891570+00:00,JM,daily_bars,WARN,cleaning_adjustments,108
+2026-09-22 09:30:04.891570+00:00,JM,daily_bars,OK,research_eligibility,eligible_rows=1631/1631
+2026-09-22 09:30:04.891570+00:00,LC,daily_bars,OK,required_columns,complete
+2026-09-22 09:30:04.891570+00:00,LC,daily_bars,OK,duplicate_keys,0
+2026-09-22 09:30:04.891570+00:00,LC,daily_bars,OK,ohlc_integrity,0
+2026-09-22 09:30:04.891570+00:00,LC,daily_bars,OK,freshness,"latest=2026-09-22, business_days_lag=0, calendar_days=0"
+2026-09-22 09:30:04.891570+00:00,LC,daily_bars,OK,contract_lineage,complete
+2026-09-22 09:30:04.891570+00:00,LC,daily_bars,OK,contract_rolls,11
+2026-09-22 09:30:04.891570+00:00,LC,daily_bars,WARN,missing_fields,turnover
+2026-09-22 09:30:04.891570+00:00,LC,daily_bars,WARN,cleaning_adjustments,1
+2026-09-22 09:30:04.891570+00:00,LC,daily_bars,OK,research_eligibility,eligible_rows=771/771
+2026-09-22 09:30:04.891570+00:00,PS,daily_bars,OK,required_columns,complete
+2026-09-22 09:30:04.891570+00:00,PS,daily_bars,OK,duplicate_keys,0
+2026-09-22 09:30:04.891570+00:00,PS,daily_bars,OK,ohlc_integrity,0
+2026-09-22 09:30:04.891570+00:00,PS,daily_bars,OK,freshness,"latest=2026-09-22, business_days_lag=0, calendar_days=0"
+2026-09-22 09:30:04.891570+00:00,PS,daily_bars,OK,contract_lineage,complete
+2026-09-22 09:30:04.891570+00:00,PS,daily_bars,OK,contract_rolls,9
+2026-09-22 09:30:04.891570+00:00,PS,daily_bars,WARN,missing_fields,turnover
+2026-09-22 09:30:04.891570+00:00,PS,daily_bars,OK,cleaning_adjustments,0
+2026-09-22 09:30:04.891570+00:00,PS,daily_bars,OK,research_eligibility,eligible_rows=423/423
+2026-09-22 09:30:04.891570+00:00,RB,daily_bars,OK,required_columns,complete
+2026-09-22 09:30:04.891570+00:00,RB,daily_bars,OK,duplicate_keys,0
+2026-09-22 09:30:04.891570+00:00,RB,daily_bars,OK,ohlc_integrity,0
+2026-09-22 09:30:04.891570+00:00,RB,daily_bars,OK,freshness,"latest=2026-09-22, business_days_lag=0, calendar_days=0"
+2026-09-22 09:30:04.891570+00:00,RB,daily_bars,OK,contract_lineage,complete
+2026-09-22 09:30:04.891570+00:00,RB,daily_bars,OK,contract_rolls,20
+2026-09-22 09:30:04.891570+00:00,RB,daily_bars,WARN,missing_fields,turnover
+2026-09-22 09:30:04.891570+00:00,RB,daily_bars,WARN,cleaning_adjustments,3
+2026-09-22 09:30:04.891570+00:00,RB,daily_bars,OK,research_eligibility,eligible_rows=1631/1631
+2026-09-22 09:30:04.891570+00:00,SI,daily_bars,OK,required_columns,complete
+2026-09-22 09:30:04.891570+00:00,SI,daily_bars,OK,duplicate_keys,0
+2026-09-22 09:30:04.891570+00:00,SI,daily_bars,OK,ohlc_integrity,0
+2026-09-22 09:30:04.891570+00:00,SI,daily_bars,OK,freshness,"latest=2026-09-22, business_days_lag=0, calendar_days=0"
+2026-09-22 09:30:04.891570+00:00,SI,daily_bars,OK,contract_lineage,complete
+2026-09-22 09:30:04.891570+00:00,SI,daily_bars,OK,contract_rolls,25
+2026-09-22 09:30:04.891570+00:00,SI,daily_bars,WARN,missing_fields,turnover
+2026-09-22 09:30:04.891570+00:00,SI,daily_bars,WARN,cleaning_adjustments,1
+2026-09-22 09:30:04.891570+00:00,SI,daily_bars,OK,research_eligibility,eligible_rows=910/910
+2026-09-22 09:30:04.891570+00:00,HC,features_daily,OK,sample_insufficiency,var99=ok
+2026-09-22 09:30:04.891570+00:00,HC,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,HC,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,I,features_daily,OK,sample_insufficiency,var99=ok
+2026-09-22 09:30:04.891570+00:00,I,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,I,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,J,features_daily,OK,sample_insufficiency,var99=ok
+2026-09-22 09:30:04.891570+00:00,J,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,J,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,JM,features_daily,OK,sample_insufficiency,var99=ok
+2026-09-22 09:30:04.891570+00:00,JM,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,JM,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,LC,features_daily,OK,sample_insufficiency,var99=ok
+2026-09-22 09:30:04.891570+00:00,LC,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,LC,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,PS,features_daily,WARN,sample_insufficiency,var99=insufficient_sample
+2026-09-22 09:30:04.891570+00:00,PS,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,PS,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,RB,features_daily,OK,sample_insufficiency,var99=ok
+2026-09-22 09:30:04.891570+00:00,RB,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,RB,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,SI,features_daily,OK,sample_insufficiency,var99=ok
+2026-09-22 09:30:04.891570+00:00,SI,features_daily,WARN,feature_missing_amihud,upstream data unavailable; no proxy generated
+2026-09-22 09:30:04.891570+00:00,SI,features_daily,WARN,feature_missing_top20_net_ratio,upstream data unavailable; no proxy generated
