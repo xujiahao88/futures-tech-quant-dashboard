@@ -1,12 +1,1 @@
-[
-  {
-    "symbol": "HC",
-    "stage": "provider_continuous",
-    "error": "ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))"
-  },
-  {
-    "symbol": "SI",
-    "stage": "provider_continuous",
-    "error": "ConnectionError(ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer')))"
-  }
-]
+[]
