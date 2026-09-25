@@ -43,7 +43,7 @@
           "momentum5": 0.0018547140649149974,
           "momentum20": -0.001847859562673193,
           "price_pct_120": 0.2,
-          "hurst_rs_120": 1.0427513970268456,
+          "hurst_rs_120": 1.0427513970268458,
           "fractal_katz_120": 1.000002198149252,
           "rv_term_structure": 0.6479747741586064,
           "relative_strength": 1.0,
@@ -66,7 +66,7 @@
           {
             "trade_date": "2025-11-11",
             "market_state": "TRANSITION",
-            "similarity_score": 0.7210423395826805,
+            "similarity_score": 0.7210423395826812,
             "future_return_5d": 0.01799007444168743,
             "future_return_20d": 0.010545905707195935,
             "future_return_40d": 0.04497518610421847,
@@ -77,7 +77,7 @@
           {
             "trade_date": "2025-01-07",
             "market_state": "NEW_SHORT_TREND",
-            "similarity_score": 0.7164928120131914,
+            "similarity_score": 0.7164928120131911,
             "future_return_5d": 0.021297192642788065,
             "future_return_20d": 0.05066150371087441,
             "future_return_40d": 0.012584704743465736,
@@ -88,7 +88,7 @@
           {
             "trade_date": "2025-01-09",
             "market_state": "TRANSITION",
-            "similarity_score": 0.7122439057988686,
+            "similarity_score": 0.7122439057988685,
             "future_return_5d": 0.027348777348777276,
             "future_return_20d": 0.03603603603603611,
             "future_return_40d": 0.02541827541827546,
@@ -99,7 +99,7 @@
           {
             "trade_date": "2025-11-13",
             "market_state": "TRANSITION",
-            "similarity_score": 0.7041875587625522,
+            "similarity_score": 0.7041875587625528,
             "future_return_5d": 0.009867406722170902,
             "future_return_20d": 0.004316990440949686,
             "future_return_40d": 0.044711686709836496,
@@ -174,7 +174,7 @@
           {
             "trade_date": "2021-02-10",
             "market_state": "TRANSITION",
-            "similarity_score": 0.7086506159114628,
+            "similarity_score": 0.7086506159114632,
             "future_return_5d": -0.04008769182586913,
             "future_return_20d": 0.03476354525524594,
             "future_return_40d": 0.03351080488568736,
@@ -185,7 +185,7 @@
           {
             "trade_date": "2021-02-09",
             "market_state": "TRANSITION",
-            "similarity_score": 0.6837346440602389,
+            "similarity_score": 0.6837346440602383,
             "future_return_5d": -0.05739238927011858,
             "future_return_20d": -0.009981285090455372,
             "future_return_40d": 0.030879600748596303,
@@ -207,7 +207,7 @@
           {
             "trade_date": "2021-02-08",
             "market_state": "TRANSITION",
-            "similarity_score": 0.6485997325476034,
+            "similarity_score": 0.6485997325476028,
             "future_return_5d": -0.014580031695721085,
             "future_return_20d": -0.02694136291600635,
             "future_return_40d": 0.04690966719492873,
@@ -281,7 +281,7 @@
           "momentum5": -0.022258064516128995,
           "momentum20": -0.05043859649122806,
           "price_pct_120": 0.6333333333333333,
-          "hurst_rs_120": 1.036779662118817,
+          "hurst_rs_120": 1.0367796621188168,
           "fractal_katz_120": 1.000014225319609,
           "rv_term_structure": 1.390195228767321,
           "relative_strength": 0.375,
@@ -315,7 +315,7 @@
           {
             "trade_date": "2024-01-22",
             "market_state": "TRANSITION",
-            "similarity_score": 0.770033868128688,
+            "similarity_score": 0.7700338681286881,
             "future_return_5d": -0.0025239777889954906,
             "future_return_20d": -0.015143866733972722,
             "future_return_40d": -0.09174659262998486,
@@ -326,7 +326,7 @@
           {
             "trade_date": "2023-12-25",
             "market_state": "TRANSITION",
-            "similarity_score": 0.7654179521371567,
+            "similarity_score": 0.7654179521371568,
             "future_return_5d": 0.0033465542885473543,
             "future_return_20d": -0.010907288051561714,
             "future_return_40d": -0.033961328705998994,
@@ -337,7 +337,7 @@
           {
             "trade_date": "2023-10-23",
             "market_state": "TRANSITION",
-            "similarity_score": 0.7628899589964018,
+            "similarity_score": 0.7628899589964017,
             "future_return_5d": 0.046480566314945904,
             "future_return_20d": 0.0980365967677308,
             "future_return_40d": 0.0754641378389207,
@@ -445,7 +445,7 @@
           {
             "trade_date": "2025-10-16",
             "market_state": "TRANSITION",
-            "similarity_score": 0.721595261912552,
+            "similarity_score": 0.7215952619125519,
             "future_return_5d": 0.006561288398449161,
             "future_return_20d": -0.000894721145243027,
             "future_return_40d": -0.0020876826722338038,
@@ -456,7 +456,7 @@
           {
             "trade_date": "2025-10-24",
             "market_state": "NEW_SHORT_TREND",
-            "similarity_score": 0.7203420006919907,
+            "similarity_score": 0.7203420006919906,
             "future_return_5d": 0.017910447761193993,
             "future_return_20d": 0.0032835820895522616,
             "future_return_40d": 0.013731343283582165,
@@ -542,7 +542,7 @@
           {
             "trade_date": "2024-06-13",
             "market_state": "TRANSITION",
-            "similarity_score": 0.7637101929442899,
+            "similarity_score": 0.7637101929442898,
             "future_return_5d": -0.0024514811031665085,
             "future_return_20d": -0.01736465781409602,
             "future_return_40d": -0.07620020429009189,
@@ -638,7 +638,7 @@
           "momentum5": -0.05920476440707656,
           "momentum20": -0.20441416086505704,
           "price_pct_120": 0.008333333333333333,
-          "hurst_rs_120": 1.0438904079219895,
+          "hurst_rs_120": 1.0438904079219893,
           "fractal_katz_120": 1.0000978387282458,
           "rv_term_structure": 1.4331934949969833,
           "relative_strength": 0.125,
@@ -650,7 +650,7 @@
           {
             "trade_date": "2026-07-21",
             "market_state": "TRANSITION",
-            "similarity_score": 0.5964788009067182,
+            "similarity_score": 0.5964788009067175,
             "future_return_5d": 0.014752538071066024,
             "future_return_20d": 0.09771573604060912,
             "future_return_40d": -0.11072335025380708,
@@ -661,7 +661,7 @@
           {
             "trade_date": "2026-07-22",
             "market_state": "TRANSITION",
-            "similarity_score": 0.5962283855960245,
+            "similarity_score": 0.596228385596024,
             "future_return_5d": 0.0360050093926112,
             "future_return_20d": 0.04618033813400135,
             "future_return_40d": -0.1482467125860989,
@@ -672,7 +672,7 @@
           {
             "trade_date": "2026-07-20",
             "market_state": "TRANSITION",
-            "similarity_score": 0.5886912483248425,
+            "similarity_score": 0.5886912483248415,
             "future_return_5d": 0.025864755375506476,
             "future_return_20d": 0.06980367715799307,
             "future_return_40d": -0.10143346837020883,
@@ -683,7 +683,7 @@
           {
             "trade_date": "2026-07-24",
             "market_state": "TRANSITION",
-            "similarity_score": 0.5868352339928272,
+            "similarity_score": 0.5868352339928264,
             "future_return_5d": -0.05064471026875872,
             "future_return_20d": 0.1005126611775673,
             "future_return_40d": -0.14432188907876342,
@@ -694,7 +694,7 @@
           {
             "trade_date": "2026-07-15",
             "market_state": "NEW_SHORT_TREND",
-            "similarity_score": 0.5705817360357401,
+            "similarity_score": 0.5705817360357391,
             "future_return_5d": -0.044427823485415074,
             "future_return_20d": 0.0034405385190725557,
             "future_return_40d": -0.06507105459985041,
@@ -757,7 +757,7 @@
           "momentum5": 0.027552674230145957,
           "momentum20": -0.07982583454281567,
           "price_pct_120": 0.35833333333333334,
-          "hurst_rs_120": 1.0058654796870392,
+          "hurst_rs_120": 1.005865479687039,
           "fractal_katz_120": 1.000066144290818,
           "rv_term_structure": 0.611491902859296,
           "relative_strength": 0.25,
@@ -769,7 +769,7 @@
           {
             "trade_date": "2026-07-13",
             "market_state": "TRANSITION",
-            "similarity_score": 0.7289211170712825,
+            "similarity_score": 0.7289211170712827,
             "future_return_5d": -0.05205047318611988,
             "future_return_20d": 0.045741324921135584,
             "future_return_40d": 0.056782334384858135,
@@ -780,7 +780,7 @@
           {
             "trade_date": "2026-07-14",
             "market_state": "TRANSITION",
-            "similarity_score": 0.7172292770145801,
+            "similarity_score": 0.71722927701458,
             "future_return_5d": -0.06666666666666665,
             "future_return_20d": 0.04341085271317824,
             "future_return_40d": 0.09147286821705425,
@@ -791,7 +791,7 @@
           {
             "trade_date": "2026-06-24",
             "market_state": "TRANSITION",
-            "similarity_score": 0.703503634421778,
+            "similarity_score": 0.7035036344217783,
             "future_return_5d": -0.037151702786377694,
             "future_return_20d": -0.07585139318885448,
             "future_return_40d": 0.0727554179566563,
@@ -813,7 +813,7 @@
           {
             "trade_date": "2026-06-17",
             "market_state": "HEALTHY_TREND",
-            "similarity_score": 0.6909383763921375,
+            "similarity_score": 0.6909383763921376,
             "future_return_5d": -0.046476761619190454,
             "future_return_20d": -0.04947526236881561,
             "future_return_40d": -0.007496251874062998,
@@ -910,7 +910,7 @@
           {
             "trade_date": "2025-11-18",
             "market_state": "NEW_SHORT_TREND",
-            "similarity_score": 0.6178705283266547,
+            "similarity_score": 0.6178705283266548,
             "future_return_5d": 0.04869094773451832,
             "future_return_20d": 0.14230509129552704,
             "future_return_40d": -0.04956042894406343,
@@ -921,7 +921,7 @@
           {
             "trade_date": "2025-11-17",
             "market_state": "TRANSITION",
-            "similarity_score": 0.6167382059340474,
+            "similarity_score": 0.6167382059340475,
             "future_return_5d": 0.012643678160919603,
             "future_return_20d": 0.12164750957854409,
             "future_return_40d": -0.05239463601532568,
