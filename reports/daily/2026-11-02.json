@@ -1,0 +1,973 @@
+{
+  "trade_date": "2026-11-02",
+  "symbols": {
+    "I": {
+      "data_facts": {
+        "trade_date": "2026-11-02",
+        "source": "SINA_PUBLIC_API",
+        "contract": "I2701",
+        "close": 674.5,
+        "volume": 252704,
+        "open_interest": 558165,
+        "roll_flag": false,
+        "lineage_status": "complete"
+      },
+      "calculation_results": {
+        "survival_layer": {
+          "rv20": 0.07539093673498275,
+          "var95": -0.007867002337010525,
+          "var99": -0.013618483075116948,
+          "cvar95": -0.010340223467257501,
+          "cvar99": -0.016871106749801655,
+          "skew60": -0.4376504735521234,
+          "kurtosis60": 0.17345291000731836,
+          "max_drawdown_250": -0.10915792458179752,
+          "drawdown_duration": 682,
+          "amihud": null
+        },
+        "positioning_layer": {
+          "oi_change": -16052.0,
+          "oi_change_pct": -0.02795458859629718,
+          "oi_percentile_250": 0.512,
+          "price_oi_quadrant": "PRICE_UP_OI_DOWN",
+          "volume_oi": 0.45274067703994336,
+          "roll_yield_user": -0.015567086730911787,
+          "roll_yield_research": 0.015567086730911787,
+          "basis_momentum_20": null,
+          "top20_net_ratio": null
+        },
+        "timing_layer": {
+          "ma5": 1579.9,
+          "ma20": 1585.5,
+          "ma60": 1608.625,
+          "momentum5": 0.001900538485904324,
+          "momentum20": -0.018920595533498785,
+          "price_pct_120": 0.075,
+          "hurst_rs_120": 1.0564685724198355,
+          "fractal_katz_120": 1.000002095967932,
+          "rv_term_structure": 1.2815209997183843,
+          "relative_strength": 1.0,
+          "breadth": 0.0
+        },
+        "state_classification": "POTENTIAL_BOTTOM",
+        "state_change": "UNCHANGED",
+        "historical_analogs": [
+          {
+            "trade_date": "2025-11-11",
+            "market_state": "TRANSITION",
+            "similarity_score": 0.715903428524576,
+            "future_return_5d": 0.01799007444168743,
+            "future_return_20d": 0.010545905707195935,
+            "future_return_40d": 0.04497518610421847,
+            "future_max_drawdown": 0.005893300248138944,
+            "future_max_rebound": 0.023573200992555776,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2026-07-31",
+            "market_state": "TRANSITION",
+            "similarity_score": 0.7032171957441153,
+            "future_return_5d": 0.0003107520198881719,
+            "future_return_20d": 0.013051584835301444,
+            "future_return_40d": 0.0018645121193288094,
+            "future_max_drawdown": -0.011187072715972635,
+            "future_max_rebound": 0.013051584835301444,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2025-11-10",
+            "market_state": "TRANSITION",
+            "similarity_score": 0.6981110240631938,
+            "future_return_5d": 0.014560099132589821,
+            "future_return_20d": 0.008364312267657992,
+            "future_return_40d": 0.05297397769516721,
+            "future_max_drawdown": -0.0012391573729864103,
+            "future_max_rebound": 0.02230483271375472,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2026-08-26",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.6975122514111688,
+            "future_return_5d": -0.003687768899815591,
+            "future_return_20d": -0.0049170251997541214,
+            "future_return_40d": -0.023355869698832188,
+            "future_max_drawdown": -0.007682851874615815,
+            "future_max_rebound": 0.015058389674247108,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2024-07-31",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.6926056736690197,
+            "future_return_5d": -0.0019411193788417824,
+            "future_return_20d": 0.0016175994823681705,
+            "future_return_40d": -0.0012940795858945586,
+            "future_max_drawdown": -0.03558718861209964,
+            "future_max_rebound": 0.017470074409576153,
+            "event_type": "LOW_CONTINUE"
+          }
+        ]
+      },
+      "research_interpretation": "由黑色期货研究室结合机制、反例与下一验证变量生成；本文件不自动生成方向结论。",
+      "hypotheses_to_validate": [
+        "检查期限结构和持仓数据缺口",
+        "核对状态变化是否由真实合约收益驱动"
+      ],
+      "risk_flags": [],
+      "missing_data": [
+        "turnover"
+      ],
+      "confidence": "MEDIUM"
+    },
+    "JM": {
+      "data_facts": {
+        "trade_date": "2026-11-02",
+        "source": "SINA_PUBLIC_API",
+        "contract": "JM2701",
+        "close": 1380.5,
+        "volume": 577583,
+        "open_interest": 432952,
+        "roll_flag": false,
+        "lineage_status": "complete"
+      },
+      "calculation_results": {
+        "survival_layer": {
+          "rv20": 0.2524290732471349,
+          "var95": -0.023736587027888424,
+          "var99": -0.03470408163265303,
+          "cvar95": -0.03080068594260487,
+          "cvar99": -0.04543334345249306,
+          "skew60": 0.07795227169340553,
+          "kurtosis60": 0.942247023715168,
+          "max_drawdown_250": -0.5433715220949263,
+          "drawdown_duration": 1222,
+          "amihud": null
+        },
+        "positioning_layer": {
+          "oi_change": 3790.0,
+          "oi_change_pct": 0.008831163989355906,
+          "oi_percentile_250": 0.332,
+          "price_oi_quadrant": "PRICE_DOWN_OI_UP",
+          "volume_oi": 1.334057817032835,
+          "roll_yield_user": -0.06483158275986961,
+          "roll_yield_research": 0.06483158275986961,
+          "basis_momentum_20": null,
+          "top20_net_ratio": null
+        },
+        "timing_layer": {
+          "ma5": 1886.8,
+          "ma20": 1927.125,
+          "ma60": 1997.7833333333333,
+          "momentum5": -0.013294336612603042,
+          "momentum20": -0.039844760672703705,
+          "price_pct_120": 0.05,
+          "hurst_rs_120": 0.8594187173132833,
+          "fractal_katz_120": 1.0000276681581914,
+          "rv_term_structure": 0.5579340780236178,
+          "relative_strength": 0.375,
+          "breadth": 0.0
+        },
+        "state_classification": "NEW_SHORT_TREND",
+        "state_change": "TRANSITION -> NEW_SHORT_TREND",
+        "historical_analogs": [
+          {
+            "trade_date": "2023-06-07",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.7153363236535782,
+            "future_return_5d": 0.02753236079720578,
+            "future_return_20d": 0.016848161084857205,
+            "future_return_40d": 0.08218615163344967,
+            "future_max_drawdown": -0.0008218615163344545,
+            "future_max_rebound": 0.05362646394082593,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2023-06-08",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.7126428817210091,
+            "future_return_5d": 0.045856467201315976,
+            "future_return_20d": 0.01994653506066224,
+            "future_return_40d": 0.0902734937281513,
+            "future_max_drawdown": 0.003907053259304849,
+            "future_max_rebound": 0.054493111248200776,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2024-08-15",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.7088490694970927,
+            "future_return_5d": -0.010934393638170947,
+            "future_return_20d": -0.03518886679920474,
+            "future_return_40d": -0.0023856858846919016,
+            "future_max_drawdown": -0.05705765407554675,
+            "future_max_rebound": 0.006361829025844923,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2023-06-09",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.7010944668211007,
+            "future_return_5d": 0.04546381243628961,
+            "future_return_20d": 0.028950050968399532,
+            "future_return_40d": 0.07176350662589193,
+            "future_max_drawdown": -0.004689092762487301,
+            "future_max_rebound": 0.04546381243628961,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2023-06-02",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.6903750684633081,
+            "future_return_5d": 0.00532896085263368,
+            "future_return_20d": 0.016396802623488416,
+            "future_return_40d": 0.0920270547243287,
+            "future_max_drawdown": -0.005943840951014523,
+            "future_max_rebound": 0.051035048165607666,
+            "event_type": "LOW_CONTINUE"
+          }
+        ]
+      },
+      "research_interpretation": "由黑色期货研究室结合机制、反例与下一验证变量生成；本文件不自动生成方向结论。",
+      "hypotheses_to_validate": [
+        "检查期限结构和持仓数据缺口",
+        "核对状态变化是否由真实合约收益驱动"
+      ],
+      "risk_flags": [],
+      "missing_data": [
+        "turnover"
+      ],
+      "confidence": "MEDIUM"
+    },
+    "J": {
+      "data_facts": {
+        "trade_date": "2026-11-02",
+        "source": "SINA_PUBLIC_API",
+        "contract": "J2701",
+        "close": 1853.0,
+        "volume": 36055,
+        "open_interest": 47254,
+        "roll_flag": false,
+        "lineage_status": "complete"
+      },
+      "calculation_results": {
+        "survival_layer": {
+          "rv20": 0.16715460663638454,
+          "var95": -0.017687184362223857,
+          "var99": -0.024005808237017763,
+          "cvar95": -0.021576472939068385,
+          "cvar99": -0.034108926821769824,
+          "skew60": -0.0574456328360326,
+          "kurtosis60": 0.048350240453080194,
+          "max_drawdown_250": -0.43568464730290457,
+          "drawdown_duration": 1102,
+          "amihud": null
+        },
+        "positioning_layer": {
+          "oi_change": 3693.0,
+          "oi_change_pct": 0.08477766809761023,
+          "oi_percentile_250": 0.692,
+          "price_oi_quadrant": "PRICE_DOWN_OI_UP",
+          "volume_oi": 0.7630041901214712,
+          "roll_yield_user": -0.02509444144630329,
+          "roll_yield_research": 0.02509444144630329,
+          "basis_momentum_20": null,
+          "top20_net_ratio": null
+        },
+        "timing_layer": {
+          "ma5": 2958.3,
+          "ma20": 3003.25,
+          "ma60": 3058.8333333333335,
+          "momentum5": -0.021358896737302402,
+          "momentum20": -0.03290676416819016,
+          "price_pct_120": 0.14166666666666666,
+          "hurst_rs_120": 0.8168875008936897,
+          "fractal_katz_120": 1.0000150188415071,
+          "rv_term_structure": 0.577517700836294,
+          "relative_strength": 0.5,
+          "breadth": 0.0
+        },
+        "state_classification": "NEW_SHORT_TREND",
+        "state_change": "TRANSITION -> NEW_SHORT_TREND",
+        "historical_analogs": [
+          {
+            "trade_date": "2024-09-19",
+            "market_state": "TRANSITION",
+            "similarity_score": 0.6834992129150818,
+            "future_return_5d": 0.025491078122657163,
+            "future_return_20d": 0.013945119208277124,
+            "future_return_40d": 0.014245014245014342,
+            "future_max_drawdown": -0.03058929374718844,
+            "future_max_rebound": 0.10271405008247103,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2024-09-18",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.6794787869411385,
+            "future_return_5d": 0.02929508696978944,
+            "future_return_20d": 0.030210558437595347,
+            "future_return_40d": 0.01876716509002141,
+            "future_max_drawdown": -0.013579493439121126,
+            "future_max_rebound": 0.12206286237412267,
+            "event_type": "BOTTOM"
+          },
+          {
+            "trade_date": "2025-01-22",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.6773734499142202,
+            "future_return_5d": -0.004292527821939562,
+            "future_return_20d": -0.024483306836247998,
+            "future_return_40d": -0.038632750397456284,
+            "future_max_drawdown": -0.02972972972972976,
+            "future_max_rebound": 0.008744038155802825,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2023-05-17",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.6734331749485122,
+            "future_return_5d": -0.05430555555555561,
+            "future_return_20d": -0.036111111111111094,
+            "future_return_40d": -0.010000000000000009,
+            "future_max_drawdown": -0.09819444444444447,
+            "future_max_rebound": -0.005972222222222268,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2025-01-23",
+            "market_state": "TRANSITION",
+            "similarity_score": 0.6730113826017644,
+            "future_return_5d": 0.011316544469238021,
+            "future_return_20d": -0.021357985336308616,
+            "future_return_40d": -0.04255658272234619,
+            "future_max_drawdown": -0.027255339496334074,
+            "future_max_rebound": 0.011316544469238021,
+            "event_type": "LOW_CONTINUE"
+          }
+        ]
+      },
+      "research_interpretation": "由黑色期货研究室结合机制、反例与下一验证变量生成；本文件不自动生成方向结论。",
+      "hypotheses_to_validate": [
+        "检查期限结构和持仓数据缺口",
+        "核对状态变化是否由真实合约收益驱动"
+      ],
+      "risk_flags": [],
+      "missing_data": [
+        "turnover"
+      ],
+      "confidence": "MEDIUM"
+    },
+    "RB": {
+      "data_facts": {
+        "trade_date": "2026-11-02",
+        "source": "SINA_PUBLIC_API",
+        "contract": "RB2701",
+        "close": 3007.0,
+        "volume": 715629,
+        "open_interest": 1866893,
+        "roll_flag": false,
+        "lineage_status": "complete"
+      },
+      "calculation_results": {
+        "survival_layer": {
+          "rv20": 0.07994277640665116,
+          "var95": -0.008550322391835834,
+          "var99": -0.02076019515680328,
+          "cvar95": -0.011917979981389753,
+          "cvar99": -0.02795488105063846,
+          "skew60": -0.4799444083390243,
+          "kurtosis60": 0.13348802630749595,
+          "max_drawdown_250": -0.5008579004835438,
+          "drawdown_duration": 1327,
+          "amihud": null
+        },
+        "positioning_layer": {
+          "oi_change": 86044.0,
+          "oi_change_pct": 0.04831628060548643,
+          "oi_percentile_250": 0.692,
+          "price_oi_quadrant": "PRICE_DOWN_OI_UP",
+          "volume_oi": 0.38332620026964587,
+          "roll_yield_user": 0.0036581310276022614,
+          "roll_yield_research": -0.0036581310276022614,
+          "basis_momentum_20": null,
+          "top20_net_ratio": null
+        },
+        "timing_layer": {
+          "ma5": 3228.2,
+          "ma20": 3257.65,
+          "ma60": 3288.2166666666667,
+          "momentum5": -0.009287925696594423,
+          "momentum20": -0.03000909366474691,
+          "price_pct_120": 0.008333333333333333,
+          "hurst_rs_120": 1.0704886809438867,
+          "fractal_katz_120": 1.000003083219636,
+          "rv_term_structure": 1.0326172854245375,
+          "relative_strength": 0.75,
+          "breadth": 0.0
+        },
+        "state_classification": "NEW_SHORT_TREND",
+        "state_change": "UNCHANGED",
+        "historical_analogs": [
+          {
+            "trade_date": "2024-03-08",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.7031667234655751,
+            "future_return_5d": -0.046918767507002856,
+            "future_return_20d": -0.03221288515406162,
+            "future_return_40d": -0.016339869281045805,
+            "future_max_drawdown": -0.06512605042016806,
+            "future_max_rebound": -0.012838468720821616,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2024-03-07",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.701479899583184,
+            "future_return_5d": -0.04696582190188325,
+            "future_return_20d": -0.043943269007207575,
+            "future_return_40d": -0.018600325505696347,
+            "future_max_drawdown": -0.06882120437107653,
+            "future_max_rebound": -0.0039525691699604515,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2024-03-01",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.6986511104891822,
+            "future_return_5d": -0.016528925619834656,
+            "future_return_20d": -0.08057851239669422,
+            "future_return_40d": -0.03397612488521584,
+            "future_max_drawdown": -0.08057851239669422,
+            "future_max_rebound": -0.00022956841138654926,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2024-03-11",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.6981138119795292,
+            "future_return_5d": -0.022148130507263608,
+            "future_return_20d": -0.015241724220052433,
+            "future_return_40d": 0.009287925696594534,
+            "future_max_drawdown": -0.04620147654203377,
+            "future_max_rebound": 0.007144558228149522,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2024-03-06",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.6972923059665909,
+            "future_return_5d": -0.02996515679442513,
+            "future_return_20d": -0.06736353077816493,
+            "future_return_40d": -0.018350754936120817,
+            "future_max_drawdown": -0.06968641114982577,
+            "future_max_rebound": -0.0009291521486642917,
+            "event_type": "NONE"
+          }
+        ]
+      },
+      "research_interpretation": "由黑色期货研究室结合机制、反例与下一验证变量生成；本文件不自动生成方向结论。",
+      "hypotheses_to_validate": [
+        "检查期限结构和持仓数据缺口",
+        "核对状态变化是否由真实合约收益驱动"
+      ],
+      "risk_flags": [],
+      "missing_data": [
+        "turnover"
+      ],
+      "confidence": "MEDIUM"
+    },
+    "HC": {
+      "data_facts": {
+        "trade_date": "2026-11-02",
+        "source": "SINA_PUBLIC_API",
+        "contract": "HC2701",
+        "close": 3156.0,
+        "volume": 426437,
+        "open_interest": 1805006,
+        "roll_flag": false,
+        "lineage_status": "complete"
+      },
+      "calculation_results": {
+        "survival_layer": {
+          "rv20": 0.046199135569879965,
+          "var95": -0.006255579063297006,
+          "var99": -0.015260529109504926,
+          "cvar95": -0.008384072324849057,
+          "cvar99": -0.022962530661828094,
+          "skew60": 0.3483397622034885,
+          "kurtosis60": 0.4151754887292802,
+          "max_drawdown_250": -0.41636261577322486,
+          "drawdown_duration": 1327,
+          "amihud": null
+        },
+        "positioning_layer": {
+          "oi_change": 49165.0,
+          "oi_change_pct": 0.02800082695414896,
+          "oi_percentile_250": 0.94,
+          "price_oi_quadrant": "PRICE_DOWN_OI_UP",
+          "volume_oi": 0.23625240026902958,
+          "roll_yield_user": 0.007287705956907478,
+          "roll_yield_research": -0.007287705956907478,
+          "basis_momentum_20": null,
+          "top20_net_ratio": null
+        },
+        "timing_layer": {
+          "ma5": 4177.4,
+          "ma20": 4227.35,
+          "ma60": 4283.916666666667,
+          "momentum5": -0.008817921830314601,
+          "momentum20": -0.029404900816802804,
+          "price_pct_120": 0.008333333333333333,
+          "hurst_rs_120": 1.0416975243941942,
+          "fractal_katz_120": 1.0000017460029869,
+          "rv_term_structure": 0.8896480542057361,
+          "relative_strength": 0.875,
+          "breadth": 0.0
+        },
+        "state_classification": "NEW_SHORT_TREND",
+        "state_change": "TRANSITION -> NEW_SHORT_TREND",
+        "historical_analogs": [
+          {
+            "trade_date": "2026-07-13",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.7756687189680382,
+            "future_return_5d": 0.006073347348750202,
+            "future_return_20d": -0.00864284045783692,
+            "future_return_40d": 0.0205559448726933,
+            "future_max_drawdown": -0.017519271198318198,
+            "future_max_rebound": 0.012847465545433367,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2024-06-25",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.7649651362072194,
+            "future_return_5d": 0.0074565037282519064,
+            "future_return_20d": -0.02858326429163216,
+            "future_return_40d": -0.10439105219552614,
+            "future_max_drawdown": -0.02858326429163216,
+            "future_max_rebound": 0.01822700911350461,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2026-01-05",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.7602355322934333,
+            "future_return_5d": 0.01474373976129173,
+            "future_return_20d": 0.003042358998361916,
+            "future_return_40d": 0.0018722209220687347,
+            "future_max_drawdown": 0.003042358998361916,
+            "future_max_rebound": 0.01965831968172238,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2026-07-28",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.7556846752797434,
+            "future_return_5d": -0.018648018648018683,
+            "future_return_20d": 0.014452214452214562,
+            "future_return_40d": 0.002797202797202747,
+            "future_max_drawdown": -0.01958041958041956,
+            "future_max_rebound": 0.014452214452214562,
+            "event_type": "NONE"
+          },
+          {
+            "trade_date": "2024-07-17",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.7517543060460201,
+            "future_return_5d": -0.019895287958115238,
+            "future_return_20d": -0.08837696335078538,
+            "future_return_40d": -0.1089005235602094,
+            "future_max_drawdown": -0.08837696335078538,
+            "future_max_rebound": 0.0010471204188482464,
+            "event_type": "LOW_CONTINUE"
+          }
+        ]
+      },
+      "research_interpretation": "由黑色期货研究室结合机制、反例与下一验证变量生成；本文件不自动生成方向结论。",
+      "hypotheses_to_validate": [
+        "检查期限结构和持仓数据缺口",
+        "核对状态变化是否由真实合约收益驱动"
+      ],
+      "risk_flags": [],
+      "missing_data": [
+        "turnover"
+      ],
+      "confidence": "MEDIUM"
+    },
+    "LC": {
+      "data_facts": {
+        "trade_date": "2026-11-02",
+        "source": "SINA_PUBLIC_API",
+        "contract": "LC2701",
+        "close": 90700.0,
+        "volume": 303268,
+        "open_interest": 439013,
+        "roll_flag": false,
+        "lineage_status": "complete"
+      },
+      "calculation_results": {
+        "survival_layer": {
+          "rv20": 0.7093324973974428,
+          "var95": -0.06891507356677468,
+          "var99": -0.1073000080054202,
+          "cvar95": -0.100385733725972,
+          "cvar99": -0.11876043383144248,
+          "skew60": -0.4330533415984975,
+          "kurtosis60": 0.44074306472246827,
+          "max_drawdown_250": -0.7112127150010886,
+          "drawdown_duration": 784,
+          "amihud": null
+        },
+        "positioning_layer": {
+          "oi_change": -4060.0,
+          "oi_change_pct": -0.00916327557761365,
+          "oi_percentile_250": 0.624,
+          "price_oi_quadrant": "PRICE_UP_OI_DOWN",
+          "volume_oi": 0.6907950334044778,
+          "roll_yield_user": -0.00788912579957356,
+          "roll_yield_research": 0.00788912579957356,
+          "basis_momentum_20": null,
+          "top20_net_ratio": null
+        },
+        "timing_layer": {
+          "ma5": 74872.0,
+          "ma20": 84078.0,
+          "ma60": 112744.66666666667,
+          "momentum5": -0.05850792028615226,
+          "momentum20": -0.27773422187377494,
+          "price_pct_120": 0.025,
+          "hurst_rs_120": 1.0266804341939555,
+          "fractal_katz_120": 1.00012087597795,
+          "rv_term_structure": 1.3902503613282644,
+          "relative_strength": 0.125,
+          "breadth": 0.0
+        },
+        "state_classification": "LONG_LIQUIDATION",
+        "state_change": "UNCHANGED",
+        "historical_analogs": [
+          {
+            "trade_date": "2026-07-31",
+            "market_state": "TRANSITION",
+            "similarity_score": 0.5914258561516414,
+            "future_return_5d": 0.01832760595647187,
+            "future_return_20d": 0.16674848633611528,
+            "future_return_40d": -0.16511209294714446,
+            "future_max_drawdown": 0.009327442317133006,
+            "future_max_rebound": 0.16674848633611528,
+            "event_type": "BOTTOM"
+          },
+          {
+            "trade_date": "2026-08-04",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.5905209196037478,
+            "future_return_5d": 0.05232558139534893,
+            "future_return_20d": 0.13743540051679592,
+            "future_return_40d": -0.1810400516795866,
+            "future_max_drawdown": 0.005006459948320385,
+            "future_max_rebound": 0.16279069767441867,
+            "event_type": "BOTTOM"
+          },
+          {
+            "trade_date": "2026-08-03",
+            "market_state": "TRANSITION",
+            "similarity_score": 0.5797640395795111,
+            "future_return_5d": 0.060473411154345014,
+            "future_return_20d": 0.16731517509727634,
+            "future_return_40d": -0.17493514915693908,
+            "future_max_drawdown": 0.0038910505836575737,
+            "future_max_rebound": 0.16731517509727634,
+            "event_type": "BOTTOM"
+          },
+          {
+            "trade_date": "2026-07-30",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.5767307296069648,
+            "future_return_5d": 0.0031867431485022024,
+            "future_return_20d": 0.07568514977692797,
+            "future_return_40d": -0.144200127469726,
+            "future_max_drawdown": -0.026290630975143392,
+            "future_max_rebound": 0.13017845761631608,
+            "event_type": "BOTTOM"
+          },
+          {
+            "trade_date": "2026-07-20",
+            "market_state": "TRANSITION",
+            "similarity_score": 0.5696438589704971,
+            "future_return_5d": 0.025864755375506476,
+            "future_return_20d": 0.06980367715799307,
+            "future_return_40d": -0.10143346837020883,
+            "future_max_drawdown": -0.047834216266749774,
+            "future_max_rebound": 0.07821751324400128,
+            "event_type": "LOW_CONTINUE"
+          }
+        ]
+      },
+      "research_interpretation": "由黑色期货研究室结合机制、反例与下一验证变量生成；本文件不自动生成方向结论。",
+      "hypotheses_to_validate": [
+        "检查期限结构和持仓数据缺口",
+        "核对状态变化是否由真实合约收益驱动"
+      ],
+      "risk_flags": [],
+      "missing_data": [
+        "turnover"
+      ],
+      "confidence": "MEDIUM"
+    },
+    "SI": {
+      "data_facts": {
+        "trade_date": "2026-11-02",
+        "source": "SINA_PUBLIC_API",
+        "contract": "SI2612",
+        "close": 8590.0,
+        "volume": 246202,
+        "open_interest": 216768,
+        "roll_flag": false,
+        "lineage_status": "complete"
+      },
+      "calculation_results": {
+        "survival_layer": {
+          "rv20": 0.4829985521826786,
+          "var95": -0.042294461680807034,
+          "var99": -0.09167118156658759,
+          "cvar95": -0.06541156209596888,
+          "cvar99": -0.11983457357698182,
+          "skew60": 0.35027962318022404,
+          "kurtosis60": -0.07118074693566079,
+          "max_drawdown_250": -0.8440021516944594,
+          "drawdown_duration": 912,
+          "amihud": null
+        },
+        "positioning_layer": {
+          "oi_change": -20865.0,
+          "oi_change_pct": -0.08780346164042874,
+          "oi_percentile_250": 0.236,
+          "price_oi_quadrant": "PRICE_DOWN_OI_DOWN",
+          "volume_oi": 1.1357857248302332,
+          "roll_yield_user": 0.03618817852834741,
+          "roll_yield_research": -0.03618817852834741,
+          "basis_momentum_20": null,
+          "top20_net_ratio": null
+        },
+        "timing_layer": {
+          "ma5": 3089.0,
+          "ma20": 3160.0,
+          "ma60": 3250.8333333333335,
+          "momentum5": -0.019512195121951237,
+          "momentum20": -0.030546623794212246,
+          "price_pct_120": 0.09166666666666666,
+          "hurst_rs_120": 1.017177399902978,
+          "fractal_katz_120": 1.0000725735308842,
+          "rv_term_structure": 0.7879717207092513,
+          "relative_strength": 0.625,
+          "breadth": 0.0
+        },
+        "state_classification": "TRANSITION",
+        "state_change": "UNCHANGED",
+        "historical_analogs": [
+          {
+            "trade_date": "2025-02-19",
+            "market_state": "TRANSITION",
+            "similarity_score": 0.7016998429044328,
+            "future_return_5d": -0.056945642795513396,
+            "future_return_20d": -0.15185504745470235,
+            "future_return_40d": -0.28472821397756687,
+            "future_max_drawdown": -0.15185504745470235,
+            "future_max_rebound": -0.014667817083692802,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2024-12-12",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.689394295520143,
+            "future_return_5d": -0.06546762589928057,
+            "future_return_20d": -0.17985611510791366,
+            "future_return_40d": -0.17410071942446048,
+            "future_max_drawdown": -0.18129496402877698,
+            "future_max_rebound": -0.017985611510791366,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2026-06-29",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.6814791112310958,
+            "future_return_5d": -0.007936507936507908,
+            "future_return_20d": -0.03650793650793649,
+            "future_return_40d": 0.06984126984126982,
+            "future_max_drawdown": -0.07777777777777772,
+            "future_max_rebound": 0.023809523809523725,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2025-02-20",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.6809800808679759,
+            "future_return_5d": -0.04378283712784592,
+            "future_return_20d": -0.1471103327495622,
+            "future_return_40d": -0.3257443082311734,
+            "future_max_drawdown": -0.1471103327495622,
+            "future_max_rebound": -0.011383537653239961,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2026-06-25",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.6805058656170218,
+            "future_return_5d": -0.036163522012578664,
+            "future_return_20d": -0.047169811320754707,
+            "future_return_40d": 0.0676100628930818,
+            "future_max_drawdown": -0.08647798742138368,
+            "future_max_rebound": 0.014150943396226356,
+            "event_type": "NONE"
+          }
+        ]
+      },
+      "research_interpretation": "由黑色期货研究室结合机制、反例与下一验证变量生成；本文件不自动生成方向结论。",
+      "hypotheses_to_validate": [
+        "检查期限结构和持仓数据缺口",
+        "核对状态变化是否由真实合约收益驱动"
+      ],
+      "risk_flags": [],
+      "missing_data": [
+        "turnover"
+      ],
+      "confidence": "MEDIUM"
+    },
+    "PS": {
+      "data_facts": {
+        "trade_date": "2026-11-02",
+        "source": "SINA_PUBLIC_API",
+        "contract": "PS2612",
+        "close": 34050.0,
+        "volume": 64775,
+        "open_interest": 61235,
+        "roll_flag": false,
+        "lineage_status": "complete"
+      },
+      "calculation_results": {
+        "survival_layer": {
+          "rv20": 0.3940781127833125,
+          "var95": -0.04075090932257034,
+          "var99": null,
+          "cvar95": -0.05450074660663114,
+          "cvar99": null,
+          "skew60": 1.12227241765131,
+          "kurtosis60": 3.3539079309738398,
+          "max_drawdown_250": -0.5624245351364405,
+          "drawdown_duration": 209,
+          "amihud": null
+        },
+        "positioning_layer": {
+          "oi_change": -1567.0,
+          "oi_change_pct": -0.02495143466768579,
+          "oi_percentile_250": 0.352,
+          "price_oi_quadrant": "PRICE_DOWN_OI_DOWN",
+          "volume_oi": 1.0578100759369642,
+          "roll_yield_user": 0.0640625,
+          "roll_yield_research": -0.0640625,
+          "basis_momentum_20": null,
+          "top20_net_ratio": null
+        },
+        "timing_layer": {
+          "ma5": 28790.0,
+          "ma20": 29504.5,
+          "ma60": 31229.25,
+          "momentum5": -0.053950574312565225,
+          "momentum20": -0.144745122718691,
+          "price_pct_120": 0.008333333333333333,
+          "hurst_rs_120": 1.0430657719602046,
+          "fractal_katz_120": 1.0000632965985023,
+          "rv_term_structure": 1.2354034597058636,
+          "relative_strength": 0.25,
+          "breadth": 0.0
+        },
+        "state_classification": "TRANSITION",
+        "state_change": "UNCHANGED",
+        "historical_analogs": [
+          {
+            "trade_date": "2026-04-13",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.6271880210868728,
+            "future_return_5d": 0.1008784358175121,
+            "future_return_20d": -0.05171436667611218,
+            "future_return_40d": -0.07240011334655705,
+            "future_max_drawdown": -0.08401813544913572,
+            "future_max_rebound": 0.167327854916407,
+            "event_type": "BOTTOM"
+          },
+          {
+            "trade_date": "2026-04-14",
+            "market_state": "POTENTIAL_BOTTOM",
+            "similarity_score": 0.6070433143196656,
+            "future_return_5d": 0.11457881808987147,
+            "future_return_20d": -0.048692385493425805,
+            "future_return_40d": -0.06689784713191738,
+            "future_max_drawdown": -0.06588643259644555,
+            "future_max_rebound": 0.19043490825025278,
+            "event_type": "BOTTOM"
+          },
+          {
+            "trade_date": "2026-05-29",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.5887864636405271,
+            "future_return_5d": -0.03640929064657883,
+            "future_return_20d": -0.05084745762711862,
+            "future_return_40d": -0.1002824858757062,
+            "future_max_drawdown": -0.08019460138104206,
+            "future_max_rebound": 0.045354676710609,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2026-05-28",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.586357030031146,
+            "future_return_5d": -0.04517742691886817,
+            "future_return_20d": -0.06925121150539315,
+            "future_return_40d": -0.11239643582929493,
+            "future_max_drawdown": -0.08378927622322963,
+            "future_max_rebound": 0.0412693450054713,
+            "event_type": "LOW_CONTINUE"
+          },
+          {
+            "trade_date": "2026-05-27",
+            "market_state": "NEW_SHORT_TREND",
+            "similarity_score": 0.5860171467645247,
+            "future_return_5d": -0.003936387970398414,
+            "future_return_20d": -0.03448275862068961,
+            "future_return_40d": -0.09494567784600849,
+            "future_max_drawdown": -0.07715320421980787,
+            "future_max_rebound": 0.04881121083293971,
+            "event_type": "LOW_CONTINUE"
+          }
+        ]
+      },
+      "research_interpretation": "由黑色期货研究室结合机制、反例与下一验证变量生成；本文件不自动生成方向结论。",
+      "hypotheses_to_validate": [
+        "检查期限结构和持仓数据缺口",
+        "核对状态变化是否由真实合约收益驱动"
+      ],
+      "risk_flags": [],
+      "missing_data": [
+        "turnover"
+      ],
+      "confidence": "MEDIUM"
+    }
+  },
+  "change_vs_yesterday": {
+    "I": "UNCHANGED",
+    "JM": "TRANSITION -> NEW_SHORT_TREND",
+    "J": "TRANSITION -> NEW_SHORT_TREND",
+    "RB": "UNCHANGED",
+    "HC": "TRANSITION -> NEW_SHORT_TREND",
+    "LC": "UNCHANGED",
+    "SI": "UNCHANGED",
+    "PS": "UNCHANGED"
+  },
+  "governance": {
+    "statistics_generated_by": "deterministic_feature_engine",
+    "llm_numeric_estimation": false,
+    "evidence_scope": "local_evidence",
+    "provider_continuous_research_disabled_without_lineage": true
+  }
+}
