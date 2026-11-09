@@ -31,7 +31,7 @@
   },
   {
     "symbol": "LC",
-    "contract": "LC2301",
+    "contract": "LC2302",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -43,7 +43,13 @@
   },
   {
     "symbol": "LC",
-    "contract": "LC2305",
+    "contract": "LC2304",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
+    "symbol": "LC",
+    "contract": "LC2301",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -55,13 +61,7 @@
   },
   {
     "symbol": "LC",
-    "contract": "LC2304",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "LC",
-    "contract": "LC2302",
+    "contract": "LC2305",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -73,25 +73,13 @@
   },
   {
     "symbol": "LC",
-    "contract": "LC2309",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "LC",
     "contract": "LC2308",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
   {
     "symbol": "LC",
-    "contract": "LC2310",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "LC",
-    "contract": "LC2312",
+    "contract": "LC2309",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -103,13 +91,19 @@
   },
   {
     "symbol": "LC",
-    "contract": "LC2711",
+    "contract": "LC2312",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
   {
     "symbol": "LC",
-    "contract": "LC2712",
+    "contract": "LC2310",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
+    "symbol": "LC",
+    "contract": "LC2711",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -126,6 +120,12 @@
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
   {
+    "symbol": "LC",
+    "contract": "LC2712",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
     "symbol": "SI",
     "contract": "SI2203",
     "stage": "contract_history",
@@ -134,12 +134,6 @@
   {
     "symbol": "SI",
     "contract": "SI2204",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "SI",
-    "contract": "SI2205",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -163,13 +157,19 @@
   },
   {
     "symbol": "SI",
-    "contract": "SI2209",
+    "contract": "SI2205",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
   {
     "symbol": "SI",
     "contract": "SI2210",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
+    "symbol": "SI",
+    "contract": "SI2209",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -187,6 +187,18 @@
   },
   {
     "symbol": "SI",
+    "contract": "SI2303",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
+    "symbol": "SI",
+    "contract": "SI2304",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
+    "symbol": "SI",
     "contract": "SI2301",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
@@ -194,12 +206,6 @@
   {
     "symbol": "SI",
     "contract": "SI2302",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "SI",
-    "contract": "SI2304",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -223,19 +229,13 @@
   },
   {
     "symbol": "SI",
-    "contract": "SI2303",
+    "contract": "SI2712",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
   {
     "symbol": "SI",
     "contract": "SI2711",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "SI",
-    "contract": "SI2712",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -247,25 +247,7 @@
   },
   {
     "symbol": "PS",
-    "contract": "PS2405",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "PS",
     "contract": "PS2402",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "PS",
-    "contract": "PS2404",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "PS",
-    "contract": "PS2406",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -277,19 +259,25 @@
   },
   {
     "symbol": "PS",
+    "contract": "PS2405",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
+    "symbol": "PS",
     "contract": "PS2407",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
   {
     "symbol": "PS",
-    "contract": "PS2408",
+    "contract": "PS2406",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
   {
     "symbol": "PS",
-    "contract": "PS2410",
+    "contract": "PS2404",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -307,7 +295,13 @@
   },
   {
     "symbol": "PS",
-    "contract": "PS2503",
+    "contract": "PS2410",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
+    "symbol": "PS",
+    "contract": "PS2408",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -331,19 +325,19 @@
   },
   {
     "symbol": "PS",
-    "contract": "PS2504",
-    "stage": "contract_history",
-    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
-  },
-  {
-    "symbol": "PS",
     "contract": "PS2505",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
   {
     "symbol": "PS",
-    "contract": "PS2710",
+    "contract": "PS2504",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
+    "symbol": "PS",
+    "contract": "PS2503",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   },
@@ -356,6 +350,12 @@
   {
     "symbol": "PS",
     "contract": "PS2712",
+    "stage": "contract_history",
+    "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
+  },
+  {
+    "symbol": "PS",
+    "contract": "PS2710",
     "stage": "contract_history",
     "error": "KeyError(\"None of [Index(['date', 'open', 'high', 'low', 'close', 'volume', 'hold', 'settle'],\\n      dtype='str')] are in the [columns]\")"
   }
